@@ -36,34 +36,58 @@
     <header class="page-header">
       <div class="container">
         <h1 class="page-title">Brand Partnered Content</h1>
+        <p class="page-description">I team up with brands to spark real engagement. Let's connect and make your next campaign pop.</p>
       </div>
     </header>
 
     <section class="container">
-      <div class="exhibited-content">
-        <p class="exhibited-text">I team up with brands to spark real engagement. Let's connect and make your next campaign pop.</p>
-      </div>
-      
-      <div class="viral-grid">
-        <div class="viral-item">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C0000000007/" data-instgrm-version="14">
-            <a href="https://www.instagram.com/p/C0000000007/">View on Instagram</a>
-          </blockquote>
+      <div class="expandable-cards">
+        <div class="expandable-card" data-reel="https://www.instagram.com/reel/ChZ9KxYvmm1/">
+          <div class="card-header">
+            <h3 class="card-title">SmallRig</h3>
+            <span class="card-indicator">Click to view</span>
+          </div>
+          <div class="card-content">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/ChZ9KxYvmm1/" data-instgrm-version="14">
+              <a href="https://www.instagram.com/reel/ChZ9KxYvmm1/">View on Instagram</a>
+            </blockquote>
+          </div>
         </div>
-        <div class="viral-item">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C0000000008/" data-instgrm-version="14">
-            <a href="https://www.instagram.com/p/C0000000008/">View on Instagram</a>
-          </blockquote>
+        
+        <div class="expandable-card" data-reel="https://www.instagram.com/reel/C9tNG-bMGeB/">
+          <div class="card-header">
+            <h3 class="card-title">Polycam</h3>
+            <span class="card-indicator">Click to view</span>
+          </div>
+          <div class="card-content">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C9tNG-bMGeB/" data-instgrm-version="14">
+              <a href="https://www.instagram.com/reel/C9tNG-bMGeB/">View on Instagram</a>
+            </blockquote>
+          </div>
         </div>
-        <div class="viral-item">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C0000000009/" data-instgrm-version="14">
-            <a href="https://www.instagram.com/p/C0000000009/">View on Instagram</a>
-          </blockquote>
+        
+        <div class="expandable-card" data-reel="https://www.instagram.com/reel/CmctQeChbb1/">
+          <div class="card-header">
+            <h3 class="card-title">Brand 3</h3>
+            <span class="card-indicator">Click to view</span>
+          </div>
+          <div class="card-content">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CmctQeChbb1/" data-instgrm-version="14">
+              <a href="https://www.instagram.com/reel/CmctQeChbb1/">View on Instagram</a>
+            </blockquote>
+          </div>
         </div>
-        <div class="viral-item">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C0000000010/" data-instgrm-version="14">
-            <a href="https://www.instagram.com/p/C0000000010/">View on Instagram</a>
-          </blockquote>
+        
+        <div class="expandable-card" data-reel="https://www.instagram.com/reel/C8U5QvmOVLM/">
+          <div class="card-header">
+            <h3 class="card-title">Brand 4</h3>
+            <span class="card-indicator">Click to view</span>
+          </div>
+          <div class="card-content">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C8U5QvmOVLM/" data-instgrm-version="14">
+              <a href="https://www.instagram.com/reel/C8U5QvmOVLM/">View on Instagram</a>
+            </blockquote>
+          </div>
         </div>
       </div>
       
@@ -91,6 +115,27 @@
     const navLinks = document.getElementById('nav-links');
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
+    });
+
+    // Expandable cards functionality
+    document.querySelectorAll('.expandable-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const isExpanded = card.classList.contains('expanded');
+        
+        // Close all other cards
+        document.querySelectorAll('.expandable-card').forEach(c => {
+          c.classList.remove('expanded');
+        });
+        
+        // Toggle current card
+        if (!isExpanded) {
+          card.classList.add('expanded');
+          // Reprocess Instagram embeds
+          if (window.instgrm) {
+            window.instgrm.Embeds.process();
+          }
+        }
+      });
     });
   </script>
 </body>

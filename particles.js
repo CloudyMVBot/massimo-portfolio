@@ -1,6 +1,6 @@
 /**
- * Massimo Vendola Portfolio - Particle System
- * Organic sine-wave flowing particles
+ * Dynamic Flowing Particles
+ * Creates an animated particle network background
  */
 
 (function() {
@@ -14,66 +14,59 @@
   
   // Configuration
   const config = {
-    particleCount: 40,
+    particleCount: 60,
     connectionDistance: 150,
-    maxConnections: 3,
-    speed: 0.3,
+    moveSpeed: 0.5,
     particleSize: 2,
-    opacity: 0.4
+    particleColor: 'rgba(250, 242, 233, 0.5)',
+    lineColor: 'rgba(250, 242, 233, 0.08)',
+    lineWidth: 1
   };
   
-  // Handle resize
+  // Resize canvas
   function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   }
   
-  window.addEventListener('resize', resize);
-  resize();
-  
   // Particle class
   class Particle {
     constructor() {
       this.reset();
-      // Start at random positions
-      this.x = Math.random() * canvas.width;
-      this.y = Math.random() * canvas.height;
     }
     
     reset() {
       this.x = Math.random() * canvas.width;
-      this.y = canvas.height + 10;
+      this.y = Math.random() * canvas.height;
+      this.vx = (Math.random() - 0.5) * config.moveSpeed;
+      this.vy = (Math.random() - 0.5) * config.moveSpeed;
       this.size = Math.random() * config.particleSize + 1;
-      this.speedY = Math.random() * config.speed + 0.2;
-      this.speedX = (Math.random() - 0.5) * 0.5;
-      this.opacity = Math.random() * config.opacity + 0.1;
-      this.phase = Math.random() * Math.PI * 2;
-      this.frequency = Math.random() * 0.01 + 0.005;
-      this.amplitude = Math.random() * 30 + 20;
+      this.alpha = Math.random() * 0.5 + 0.2;
     }
     
     update() {
-      // Sine wave motion
-      this.phase += this.frequency;
-      this.y -= this.speedY;
-      this.x += this.speedX + Math.sin(this.phase) * 0.3;
+      this.x += this.vx;
+      this.y += this.vy;
       
-      // Reset if off screen
-      if (this.y < -10 || this.x < -50 || this.x > canvas.width + 50) {
-        this.reset();
-      }
+      // Bounce off edges
+      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+      
+      // Keep in bounds
+      this.x = Math.max(0, Math.min(canvas.width, this.x));
+      this.y = Math.max(0, Math.min(canvas.height, this.y));
     }
     
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(250, 242, 233, ${this.opacity})`;
+      ctx.fillStyle = config.particleColor.replace('0.5', this.alpha.toString());
       ctx.fill();
     }
   }
   
   // Initialize particles
-  function init() {
+  function initParticles() {
     particles = [];
     for (let i = 0; i < config.particleCount; i++) {
       particles.push(new Particle());
@@ -83,24 +76,19 @@
   // Draw connections between nearby particles
   function drawConnections() {
     for (let i = 0; i < particles.length; i++) {
-      let connections = 0;
-      
       for (let j = i + 1; j < particles.length; j++) {
-        if (connections >= config.maxConnections) break;
-        
         const dx = particles[i].x - particles[j].x;
         const dy = particles[i].y - particles[j].y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         
         if (distance < config.connectionDistance) {
-          const opacity = (1 - distance / config.connectionDistance) * 0.15;
+          const alpha = (1 - distance / config.connectionDistance) * 0.15;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = `rgba(250, 242, 233, ${opacity})`;
-          ctx.lineWidth = 0.5;
+          ctx.strokeStyle = config.lineColor.replace('0.08', alpha.toString());
+          ctx.lineWidth = config.lineWidth;
           ctx.stroke();
-          connections++;
         }
       }
     }
@@ -112,32 +100,40 @@
     
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    // Update and draw particles
     particles.forEach(particle => {
       particle.update();
       particle.draw();
     });
     
-    // Draw connections
     drawConnections();
     
     animationId = requestAnimationFrame(animate);
   }
   
-  // Visibility handling
-  document.addEventListener('visibilitychange', () => {
+  // Visibility check - pause when not visible
+  function handleVisibility() {
     if (document.hidden) {
       isActive = false;
       if (animationId) {
         cancelAnimationFrame(animationId);
+        animationId = null;
       }
     } else {
       isActive = true;
       animate();
     }
+  }
+  
+  // Initialize
+  resize();
+  initParticles();
+  animate();
+  
+  // Event listeners
+  window.addEventListener('resize', () => {
+    resize();
+    initParticles();
   });
   
-  // Initialize and start
-  init();
-  animate();
+  document.addEventListener('visibilitychange', handleVisibility);
 })();

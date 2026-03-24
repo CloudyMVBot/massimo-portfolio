@@ -3,71 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Massimo Vendola | 3D Art, Content & Strategy</title>
+  <title>Massimo Vendola — 3D Art, Content & Strategy</title>
+  <meta name="description" content="Transforming spaces with 3D art, content and strategy. I turn environments into immersive digital experiences.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <canvas id="particles-canvas"></canvas>
   
-  <nav>
-    <div class="logo">
-      <a href="index.html">MV</a>
+  <nav class="nav">
+    <div class="nav-content">
+      <a href="index.html" class="nav-logo">MV</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="documentaries.html">Documentaries</a></li>
+        <li><a href="digital-art.html">Digital Art</a></li>
+        <li><a href="branded-content.html">Branded Content</a></li>
+        <li><a href="viral-selects.html">Viral Selects</a></li>
+        <li><a href="exhibited-work.html">Exhibited Work</a></li>
+      </ul>
+      <div class="nav-toggle" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-    <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="documentaries.html">Documentaries</a></li>
-      <li><a href="digital-art.html">Digital Art</a></li>
-      <li><a href="viral-selects.html">Viral Selects</a></li>
-      <li><a href="exhibited-work.html">Exhibited Work</a></li>
-      <li><a href="branded-content.html">Brand Content</a></li>
-    </ul>
   </nav>
 
-  <main>
+  <main class="main">
     <section class="hero">
-      <h1>Transforming Spaces with 3D Art, Content & Strategy</h1>
-      <p class="tagline">I turn environments into immersive digital experiences and drive real engagement online</p>
-      <p class="bio">With a proven track record of producing content that has garnered millions of views, Massimo specializes in crafting engaging promotional videos, documentaries, explainer content and content strategies for social media. He has worked on high-impact campaigns, including creating promotional videos for NFT projects with renowned artists like Refik Anadol, Fuse, and Vince Fraser. Massimo's expertise lies in merging creative storytelling with data-driven insights, driving visibility and elevating brands through immersive media, point cloud animations, and targeted social media strategies.</p>
+      <h1 class="hero-title">Transforming Spaces with 3D Art, Content & Strategy.</h1>
+      <p class="hero-tagline">I turn environments into immersive digital experiences and drive real engagement online.</p>
     </section>
 
-    <section class="worked-with">
-      <h2>Worked With</h2>
-      <div class="logos">
-        <span>ARTECHOUSE</span>
-        <span>Polycam</span>
-        <span>NASA</span>
-        <span>SmallRig</span>
-        <span>Kiri Engine</span>
-        <span>Intel</span>
-        <span>Future Classic</span>
-        <span>Motion Array</span>
-        <span>Kwik Learning</span>
-        <span>Looking Glass</span>
-        <span>Marshmello/Human Person</span>
-        <span>Nohlab</span>
-        <span>JALC</span>
-        <span>BnA Hotels</span>
+    <section class="bio">
+      <div class="container">
+        <div class="bio-content">
+          <p class="bio-text">I have a proven track record of taking projects from concept to launch across 3D art, digital installations, and social content. My work has generated millions of views and reached hundreds of millions of impressions. Whether it's building world-class experiences for clients like Refik Anadol, Fuse, and Vince Fraser, or growing channels from scratch, I bring creative vision and strategic execution to every project.</p>
+          <p class="bio-text">I also lead creative and social strategy, overseeing teams and managing content production at scale. From shooting and editing to crafting multi-platform campaigns, I ensure every piece of content hits hard and reaches the right audience.</p>
+        </div>
       </div>
     </section>
 
-    <section class="contact-section">
-      <p>Brooklyn, New York</p>
-      <p><a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener noreferrer">@mv.nyc</a></p>
+    <section class="clients">
+      <div class="container">
+        <h2 class="section-title">Worked with</h2>
+        <ul class="clients-list">
+          <li>Artechouse</li>
+          <li>Refik Anadol</li>
+          <li>Fuse</li>
+          <li>Vince Fraser</li>
+          <li>Immersive Museum</li>
+          <li>Nike</li>
+          <li>Converse</li>
+          <li>Budweiser</li>
+          <li>Outfront Media</li>
+        </ul>
+      </div>
     </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p class="footer-location">Brooklyn, New York</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener">@mv.nyc</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </main>
 
-  <footer>
-    <p>&copy; 2024 Massimo Vendola. All rights reserved.</p>
-  </footer>
-
   <script src="particles.js"></script>
+  <script>
+    // Mobile menu toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

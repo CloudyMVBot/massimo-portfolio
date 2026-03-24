@@ -1,113 +1,77 @@
 /**
- * Massimo Vendola Portfolio - Organic Particle System
- * Flowing, breathing particle animation with mouse interaction
+ * Massimo Vendola Portfolio - Particle System
+ * Organic sine-wave flowing particles
  */
 
 (function() {
-  const canvas = document.getElementById('particle-canvas');
+  const canvas = document.getElementById('particles-canvas');
   if (!canvas) return;
-
+  
   const ctx = canvas.getContext('2d');
   let particles = [];
   let animationId = null;
-  let mouse = { x: null, y: null, radius: 150 };
-  let time = 0;
-
-  // Configuration for organic feel
+  let isActive = true;
+  
+  // Configuration
   const config = {
-    particleCount: window.innerWidth < 768 ? 40 : 80,
+    particleCount: 40,
     connectionDistance: 150,
-    mouseRepelDistance: 200,
-    mouseRepelForce: 0.8,
-    baseSpeed: 0.3,
-    speedVariation: 0.4,
-    sizeMin: 1.5,
-    sizeMax: 3.5,
-    opacityMin: 0.2,
-    opacityMax: 0.6,
-    // Sine wave motion parameters for organic flow
-    waveAmplitude: 0.5,
-    waveFrequency: 0.002,
-    waveSpeed: 0.001
+    maxConnections: 3,
+    speed: 0.3,
+    particleSize: 2,
+    opacity: 0.4
   };
-
-  // Resize canvas
+  
+  // Handle resize
   function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    config.particleCount = window.innerWidth < 768 ? 40 : 80;
   }
-
-  // Particle class with organic motion
+  
+  window.addEventListener('resize', resize);
+  resize();
+  
+  // Particle class
   class Particle {
     constructor() {
       this.reset();
-      // Random start time for wave offset (each particle has unique phase)
-      this.wavePhase = Math.random() * Math.PI * 2;
-      this.waveOffset = Math.random() * 1000;
-    }
-
-    reset() {
+      // Start at random positions
       this.x = Math.random() * canvas.width;
       this.y = Math.random() * canvas.height;
-      
-      // Varied base velocities for organic feel
-      const angle = Math.random() * Math.PI * 2;
-      const speed = config.baseSpeed + Math.random() * config.speedVariation;
-      this.vx = Math.cos(angle) * speed;
-      this.vy = Math.sin(angle) * speed;
-      
-      // Individual particle characteristics
-      this.size = config.sizeMin + Math.random() * (config.sizeMax - config.sizeMin);
-      this.opacity = config.opacityMin + Math.random() * (config.opacityMax - config.opacityMin);
-      this.pulsePhase = Math.random() * Math.PI * 2;
-      this.pulseSpeed = 0.02 + Math.random() * 0.03;
     }
-
+    
+    reset() {
+      this.x = Math.random() * canvas.width;
+      this.y = canvas.height + 10;
+      this.size = Math.random() * config.particleSize + 1;
+      this.speedY = Math.random() * config.speed + 0.2;
+      this.speedX = (Math.random() - 0.5) * 0.5;
+      this.opacity = Math.random() * config.opacity + 0.1;
+      this.phase = Math.random() * Math.PI * 2;
+      this.frequency = Math.random() * 0.01 + 0.005;
+      this.amplitude = Math.random() * 30 + 20;
+    }
+    
     update() {
-      // Organic sine wave motion - creates flowing current effect
-      const waveX = Math.sin(time * config.waveSpeed + this.wavePhase + this.y * config.waveFrequency) * config.waveAmplitude;
-      const waveY = Math.cos(time * config.waveSpeed + this.wavePhase + this.x * config.waveFrequency) * config.waveAmplitude;
+      // Sine wave motion
+      this.phase += this.frequency;
+      this.y -= this.speedY;
+      this.x += this.speedX + Math.sin(this.phase) * 0.3;
       
-      // Apply base velocity + wave motion
-      this.x += this.vx + waveX * 0.3;
-      this.y += this.vy + waveY * 0.3;
-
-      // Mouse repulsion - gentle avoidance
-      if (mouse.x !== null && mouse.y !== null) {
-        const dx = this.x - mouse.x;
-        const dy = this.y - mouse.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < config.mouseRepelDistance) {
-          const force = (config.mouseRepelDistance - distance) / config.mouseRepelDistance;
-          const angle = Math.atan2(dy, dx);
-          const repelX = Math.cos(angle) * force * config.mouseRepelForce;
-          const repelY = Math.sin(angle) * force * config.mouseRepelForce;
-          this.x += repelX;
-          this.y += repelY;
-        }
+      // Reset if off screen
+      if (this.y < -10 || this.x < -50 || this.x > canvas.width + 50) {
+        this.reset();
       }
-
-      // Breathing opacity effect
-      this.currentOpacity = this.opacity + Math.sin(time * this.pulseSpeed + this.pulsePhase) * 0.15;
-      this.currentOpacity = Math.max(0.1, Math.min(0.8, this.currentOpacity));
-
-      // Wrap around edges for continuous flow
-      if (this.x < -10) this.x = canvas.width + 10;
-      if (this.x > canvas.width + 10) this.x = -10;
-      if (this.y < -10) this.y = canvas.height + 10;
-      if (this.y > canvas.height + 10) this.y = -10;
     }
-
+    
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(250, 242, 233, ${this.currentOpacity})`;
+      ctx.fillStyle = `rgba(250, 242, 233, ${this.opacity})`;
       ctx.fill();
     }
   }
-
+  
   // Initialize particles
   function init() {
     particles = [];
@@ -115,100 +79,65 @@
       particles.push(new Particle());
     }
   }
-
+  
   // Draw connections between nearby particles
   function drawConnections() {
     for (let i = 0; i < particles.length; i++) {
+      let connections = 0;
+      
       for (let j = i + 1; j < particles.length; j++) {
+        if (connections >= config.maxConnections) break;
+        
         const dx = particles[i].x - particles[j].x;
         const dy = particles[i].y - particles[j].y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-
+        
         if (distance < config.connectionDistance) {
-          // Fade connection based on distance
-          const opacity = (1 - distance / config.connectionDistance) * 0.3;
+          const opacity = (1 - distance / config.connectionDistance) * 0.15;
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(250, 242, 233, ${opacity})`;
-          ctx.lineWidth = 0.5;
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(250, 242, 233, ${opacity})`;
+          ctx.lineWidth = 0.5;
           ctx.stroke();
+          connections++;
         }
       }
     }
   }
-
-  // Animation loop with requestAnimationFrame for 60fps
+  
+  // Animation loop
   function animate() {
-    time += 16; // Approximate ms per frame at 60fps
+    if (!isActive) return;
     
-    // Clear with slight trail effect for smoother motion
-    ctx.fillStyle = 'rgba(20, 19, 17, 0.3)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
     // Update and draw particles
     particles.forEach(particle => {
       particle.update();
       particle.draw();
     });
-
+    
     // Draw connections
     drawConnections();
-
+    
     animationId = requestAnimationFrame(animate);
   }
-
-  // Mouse event handlers
-  function handleMouseMove(e) {
-    mouse.x = e.clientX;
-    mouse.y = e.clientY;
-  }
-
-  function handleMouseLeave() {
-    mouse.x = null;
-    mouse.y = null;
-  }
-
-  function handleTouchMove(e) {
-    if (e.touches.length > 0) {
-      mouse.x = e.touches[0].clientX;
-      mouse.y = e.touches[0].clientY;
-    }
-  }
-
-  function handleTouchEnd() {
-    mouse.x = null;
-    mouse.y = null;
-  }
-
-  // Visibility handling - pause when tab hidden
-  function handleVisibilityChange() {
+  
+  // Visibility handling
+  document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
-      if (animationId) cancelAnimationFrame(animationId);
+      isActive = false;
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
     } else {
+      isActive = true;
       animate();
     }
-  }
-
-  // Initialize
-  resize();
+  });
+  
+  // Initialize and start
   init();
   animate();
-
-  // Event listeners
-  window.addEventListener('resize', () => {
-    resize();
-    init();
-  });
-
-  window.addEventListener('mousemove', handleMouseMove);
-  window.addEventListener('mouseleave', handleMouseLeave);
-  window.addEventListener('touchmove', handleTouchMove, { passive: true });
-  window.addEventListener('touchend', handleTouchEnd);
-  document.addEventListener('visibilitychange', handleVisibilityChange);
-
-  // Cleanup on page unload
-  window.addEventListener('beforeunload', () => {
-    if (animationId) cancelAnimationFrame(animationId);
-  });
 })();

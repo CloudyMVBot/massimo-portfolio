@@ -3,161 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Branded Content | Massimo Vendola</title>
-  <meta name="description" content="Brand partnerships with Polycam, NASA, SmallRig, and more - Massimo Vendola">
+  <title>Brand Partnered Content | Massimo Vendola</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Particle Background -->
-  <canvas id="particle-canvas"></canvas>
-
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="logo">MV</a>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="documentaries.html">Documentaries</a></li>
-        <li><a href="digital-art.html">Digital Art</a></li>
-        <li><a href="viral-selects.html">Viral Selects</a></li>
-        <li><a href="exhibited-work.html">Exhibited Work</a></li>
-        <li><a href="branded-content.html" class="active">Branded Content</a></li>
-      </ul>
+  <canvas id="particles-canvas"></canvas>
+  
+  <nav>
+    <div class="logo">
+      <a href="index.html">MV</a>
     </div>
+    <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="documentaries.html">Documentaries</a></li>
+      <li><a href="digital-art.html">Digital Art</a></li>
+      <li><a href="viral-selects.html">Viral Selects</a></li>
+      <li><a href="exhibited-work.html">Exhibited Work</a></li>
+      <li><a href="branded-content.html" class="active">Brand Content</a></li>
+    </ul>
   </nav>
 
   <main>
+    <header class="page-header">
+      <h1>Brand Partnered Content</h1>
+    </header>
+
     <section class="content-section">
-      <div class="section-header">
-        <h2>Branded Content</h2>
-        <p>Strategic partnerships with industry leaders in technology, art, and entertainment. 
-           Creating content that authentically connects brands with their audiences.</p>
-      </div>
-
-      <!-- Brand Partners Grid -->
-      <div class="content-grid">
-        <!-- Polycam -->
-        <div class="content-card">
-          <h3>Polycam</h3>
-          <p>Official content creator showcasing the power of mobile 3D scanning technology.
-             Produced viral tutorials and artistic explorations that drove thousands of new users
-             to discover photogrammetry.</p>
+      <p>I team up with brands to spark real engagement. Let's connect and make your next campaign pop.</p>
+      
+      <div class="instagram-grid">
+        <div class="instagram-embed">
+          <blockquote 
+            class="instagram-media" 
+            data-instgrm-permalink="https://www.instagram.com/reel/C0kV26jL0Kh/"
+            data-instgrm-version="14"
+            style="width:100%; max-width:400px;">
+          </blockquote>
         </div>
-
-        <!-- NASA -->
-        <div class="content-card">
-          <h3>NASA</h3>
-          <p>Documentary and educational content bringing space exploration to new audiences through
-             immersive visual storytelling and cutting-edge digital effects.</p>
+        <div class="instagram-embed">
+          <blockquote 
+            class="instagram-media" 
+            data-instgrm-permalink="https://www.instagram.com/reel/C5tWlOxLMhV/"
+            data-instgrm-version="14"
+            style="width:100%; max-width:400px;">
+          </blockquote>
         </div>
-
-        <!-- SmallRig -->
-        <div class="content-card">
-          <h3>SmallRig</h3>
-          <p>Content creation showcasing professional camera equipment and filmmaking solutions
-             for creators worldwide.</p>
+        <div class="instagram-embed">
+          <blockquote 
+            class="instagram-media" 
+            data-instgrm-permalink="https://www.instagram.com/reel/C6_q3oTrgAa/"
+            data-instgrm-version="14"
+            style="width:100%; max-width:400px;">
+          </blockquote>
         </div>
-
-        <!-- Kiri Engine -->
-        <div class="content-card">
-          <h3>Kiri Engine</h3>
-          <p>Brand ambassador and content creator demonstrating advanced 3D scanning capabilities
-             for game developers, VFX artists, and digital creators.</p>
+        <div class="instagram-embed">
+          <blockquote 
+            class="instagram-media" 
+            data-instgrm-permalink="https://www.instagram.com/reel/C4xP6ClL7zE/"
+            data-instgrm-version="14"
+            style="width:100%; max-width:400px;">
+          </blockquote>
         </div>
-
-        <!-- Intel -->
-        <div class="content-card">
-          <h3>Intel</h3>
-          <p>Creative technology content showcasing the power of Intel processors for creative
-             professionals working in 3D, VFX, and real-time rendering.</p>
-        </div>
-
-        <!-- Future Classic -->
-        <div class="content-card">
-          <h3>Future Classic</h3>
-          <p>Music visualizers, artist documentaries, and digital content for one of the world's
-             most innovative music labels.</p>
-        </div>
-
-        <!-- Motion Array -->
-        <div class="content-card">
-          <h3>Motion Array</h3>
-          <p>Template design and tutorial content helping creators worldwide elevate their
-             video production quality.</p>
-        </div>
-
-        <!-- Looking Glass -->
-        <div class="content-card">
-          <h3>Looking Glass</h3>
-          <p>Holographic display content creation, pushing the boundaries of spatial computing
-             and glasses-free 3D experiences.</p>
-        </div>
-      </div>
-
-      <!-- Additional Partners -->
-      <section class="clients-section" style="margin-top: 4rem;">
-        <h3>Additional Partners</h3>
-        <div class="clients-grid">
-          <span class="client-tag">Kwik Learning</span>
-          <span class="client-tag">Marshmello / Human Person</span>
-          <span class="client-tag">Nohlab</span>
-          <span class="client-tag">JALC</span>
-          <span class="client-tag">BnA Hotels</span>
-        </div>
-      </section>
-
-      <!-- Services Section -->
-      <div class="content-card" style="margin-top: 4rem;">
-        <h3 style="text-align: center; margin-bottom: 2rem;">Services Offered</h3>
-        <div class="content-grid" style="margin-top: 0;">
-          <div>
-            <h4 style="margin-bottom: 0.5rem;">Content Strategy</h4>
-            <p style="font-size: 0.95rem;">Developing comprehensive content strategies that align brand messaging 
-               with audience interests and platform algorithms.</p>
-          </div>
-          <div>
-            <h4 style="margin-bottom: 0.5rem;">Video Production</h4>
-            <p style="font-size: 0.95rem;">End-to-end production services from concept to delivery, optimized 
-               for social media and digital platforms.</p>
-          </div>
-          <div>
-            <h4 style="margin-bottom: 0.5rem;">3D & Motion Design</h4>
-            <p style="font-size: 0.95rem;">Eye-catching motion graphics and 3D animations that elevate brand 
-               content above the noise.</p>
-          </div>
-          <div>
-            <h4 style="margin-bottom: 0.5rem;">Documentation</h4>
-            <p style="font-size: 0.95rem;">Professional documentary coverage of products, events, and brand stories 
-               with cinematic quality.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonial -->
-      <div class="content-card" style="margin-top: 4rem; text-align: center;">
-        <h3 style="margin-bottom: 1.5rem;">Client Words</h3>
-        <p style="max-width: 700px; margin: 0 auto 2rem; font-size: 1.1rem;">
-          "Massimo consistently delivers content that exceeds expectations. His unique blend of technical 
-          expertise and creative vision has helped us reach new audiences and showcase our products 
-          in ways we never imagined possible."
-        </p>
-        <p style="color: var(--text-secondary); font-size: 0.9rem;">— Brand Partnership Manager, Polycam</p>
       </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact-section">
-      <h2>Brand Partnership Inquiries</h2>
-      <p>Interested in working together? Let's create something amazing.</p>
-      <a href="mailto:hello@massimovendola.com" class="email-link">hello@massimovendola.com</a>
+      <p>Brooklyn, New York</p>
+      <p><a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener noreferrer">@mv.nyc</a></p>
     </section>
   </main>
 
@@ -166,15 +86,6 @@
   </footer>
 
   <script src="particles.js"></script>
-  <script>
-    function toggleMenu() {
-      document.getElementById('nav-links').classList.toggle('active');
-    }
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('nav-links').classList.remove('active');
-      });
-    });
-  </script>
+  <script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>

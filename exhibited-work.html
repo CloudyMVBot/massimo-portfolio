@@ -4,155 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Exhibited Work | Massimo Vendola</title>
-  <meta name="description" content="Digital art exhibited in Miami, Amsterdam, Tokyo, and Wroclaw - Massimo Vendola">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Particle Background -->
-  <canvas id="particle-canvas"></canvas>
-
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="logo">MV</a>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="documentaries.html">Documentaries</a></li>
-        <li><a href="digital-art.html">Digital Art</a></li>
-        <li><a href="viral-selects.html">Viral Selects</a></li>
-        <li><a href="exhibited-work.html" class="active">Exhibited Work</a></li>
-        <li><a href="branded-content.html">Branded Content</a></li>
-      </ul>
+  <canvas id="particles-canvas"></canvas>
+  
+  <nav>
+    <div class="logo">
+      <a href="index.html">MV</a>
     </div>
+    <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="documentaries.html">Documentaries</a></li>
+      <li><a href="digital-art.html">Digital Art</a></li>
+      <li><a href="viral-selects.html">Viral Selects</a></li>
+      <li><a href="exhibited-work.html" class="active">Exhibited Work</a></li>
+      <li><a href="branded-content.html">Brand Content</a></li>
+    </ul>
   </nav>
 
   <main>
+    <header class="page-header">
+      <h1>Exhibited Work</h1>
+    </header>
+
     <section class="content-section">
-      <div class="section-header">
-        <h2>Exhibited Work</h2>
-        <p>My digital work has been exhibited in cities like Miami, Amsterdam, Tokyo, and Wroclaw—
-           bringing immersive digital experiences to audiences around the world.</p>
-      </div>
-
-      <!-- Exhibition Gallery -->
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <div class="embed-placeholder" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
-            <div class="icon">🖼</div>
-            <p>Exhibition Documentation</p>
-          </div>
-          <div class="gallery-overlay">
-            <h4>Digital Horizons</h4>
-            <p>ARTECHOUSE Miami, USA</p>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="embed-placeholder" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
-            <div class="icon">🖼</div>
-            <p>Installation View</p>
-          </div>
-          <div class="gallery-overlay">
-            <h4>Point Cloud Dreams</h4>
-            <p>Amsterdam, Netherlands</p>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="embed-placeholder" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
-            <div class="icon">🖼</div>
-            <p>Exhibition Space</p>
-          </div>
-          <div class="gallery-overlay">
-            <h4>Immersive Visions</h4>
-            <p>Tokyo, Japan</p>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <div class="embed-placeholder" style="height: 100%; display: flex; flex-direction: column; justify-content: center;">
-            <div class="icon">🖼</div>
-            <p>Gallery Installation</p>
-          </div>
-          <div class="gallery-overlay">
-            <h4>Digital Landscapes</h4>
-            <p>Wroclaw, Poland</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Exhibitions List -->
-      <div class="section-header" style="margin-top: 5rem;">
-        <h2 style="font-size: 1.8rem;">Exhibition History</h2>
-      </div>
-
-      <div class="exhibitions-list">
-        <div class="exhibition-item">
-          <span class="exhibition-year">2024</span>
-          <div class="exhibition-info">
-            <h4>Future Visions</h4>
-            <p>Group exhibition featuring digital art installations and point cloud visualizations at ARTECHOUSE Miami.</p>
-          </div>
-        </div>
-
-        <div class="exhibition-item">
-          <span class="exhibition-year">2023</span>
-          <div class="exhibition-info">
-            <h4>Digital Amsterdam</h4>
-            <p>Solo showcase of immersive digital landscapes and motion studies exploring the intersection of physical and digital space.</p>
-          </div>
-        </div>
-
-        <div class="exhibition-item">
-          <span class="exhibition-year">2023</span>
-          <div class="exhibition-info">
-            <h4>Tokyo Digital Arts Festival</h4>
-            <p>Featured artist presenting large-scale projection installations and interactive digital experiences.</p>
-          </div>
-        </div>
-
-        <div class="exhibition-item">
-          <span class="exhibition-year">2022</span>
-          <div class="exhibition-info">
-            <h4>Wroclaw Media Art Biennale</h4>
-            <p>International exhibition of new media art, showcasing point cloud visualizations and experimental VFX work.</p>
-          </div>
-        </div>
-
-        <div class="exhibition-item">
-          <span class="exhibition-year">2022</span>
-          <div class="exhibition-info">
-            <h4>Immersive Miami</h4>
-            <p>Group exhibition at ARTECHOUSE exploring the future of immersive digital art experiences.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Featured Press -->
-      <div class="content-card" style="margin-top: 4rem; text-align: center;">
-        <h3 style="margin-bottom: 1.5rem;">Press & Recognition</h3>
-        <p style="max-width: 700px; margin: 0 auto 2rem;">
-          "Massimo Vendola's work represents a new frontier in digital art, blending technical precision 
-          with emotional resonance. His point cloud visualizations transform familiar spaces into 
-          ethereal dreamscapes that challenge our perception of reality."
-        </p>
-        <p style="color: var(--text-secondary); font-size: 0.9rem;">— Digital Arts Magazine</p>
-      </div>
+      <p>My digital work has been exhibited in cities like Miami, Amsterdam, Tokyo, and Wroclaw. From music festivals to immersive screens, I turn real-world data into motion-driven art that connects across cultures.</p>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact-section">
-      <h2>Exhibition Inquiries</h2>
-      <p>Interested in featuring my work in your gallery or exhibition?</p>
-      <a href="mailto:hello@massimovendola.com" class="email-link">hello@massimovendola.com</a>
+      <p>Brooklyn, New York</p>
+      <p><a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener noreferrer">@mv.nyc</a></p>
     </section>
   </main>
 
@@ -161,15 +51,5 @@
   </footer>
 
   <script src="particles.js"></script>
-  <script>
-    function toggleMenu() {
-      document.getElementById('nav-links').classList.toggle('active');
-    }
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('nav-links').classList.remove('active');
-      });
-    });
-  </script>
 </body>
 </html>

@@ -4,171 +4,95 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Viral Selects | Massimo Vendola</title>
-  <meta name="description" content="Viral social media content that converts - Massimo Vendola">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Particle Background -->
-  <canvas id="particle-canvas"></canvas>
-
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="logo">MV</a>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="documentaries.html">Documentaries</a></li>
-        <li><a href="digital-art.html">Digital Art</a></li>
-        <li><a href="viral-selects.html" class="active">Viral Selects</a></li>
-        <li><a href="exhibited-work.html">Exhibited Work</a></li>
-        <li><a href="branded-content.html">Branded Content</a></li>
-      </ul>
+  <canvas id="particles-canvas"></canvas>
+  
+  <nav>
+    <div class="logo">
+      <a href="index.html">MV</a>
     </div>
+    <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="documentaries.html">Documentaries</a></li>
+      <li><a href="digital-art.html">Digital Art</a></li>
+      <li><a href="viral-selects.html" class="active">Viral Selects</a></li>
+      <li><a href="exhibited-work.html">Exhibited Work</a></li>
+      <li><a href="branded-content.html">Brand Content</a></li>
+    </ul>
   </nav>
 
   <main>
+    <header class="page-header">
+      <h1>Viral Selects</h1>
+      <p class="subtitle">Content that converts</p>
+    </header>
+
     <section class="content-section">
-      <div class="section-header">
-        <h2>Viral Selects</h2>
-        <p>Social media content engineered for engagement. With a proven track record of producing 
-           content that has garnered millions of views, I create videos that capture attention 
-           and drive real audience connection.</p>
-      </div>
-
-      <!-- Stats -->
-      <div class="stats-grid">
-        <div class="stat-item">
-          <span class="stat-number">10M+</span>
-          <span class="stat-label">Total Views</span>
+      <div class="instagram-grid">
+        <div class="instagram-embed">
+          <blockquote 
+            class="instagram-media" 
+            data-instgrm-permalink="https://www.instagram.com/reel/CwXJV4Tgejr/"
+            data-instgrm-version="14"
+            style="width:100%; max-width:400px;">
+          </blockquote>
         </div>
-        <div class="stat-item">
-          <span class="stat-number">500K+</span>
-          <span class="stat-label">Engagements</span>
+        <div class="instagram-embed">
+          <blockquote 
+            class="instagram-media" 
+            data-instgrm-permalink="https://www.instagram.com/reel/Cw8-H1bA2Mk/"
+            data-instgrm-version="14"
+            style="width:100%; max-width:400px;">
+          </blockquote>
         </div>
-        <div class="stat-item">
-          <span class="stat-number">100+</span>
-          <span class="stat-label">Viral Posts</span>
+        <div class="instagram-embed">
+          <blockquote 
+            class="instagram-media" 
+            data-instgrm-permalink="https://www.instagram.com/reel/CqHWyY3LlvM/"
+            data-instgrm-version="14"
+            style="width:100%; max-width:400px;">
+          </blockquote>
         </div>
-      </div>
-
-      <!-- Instagram Embeds -->
-      <div class="section-header" style="margin-top: 4rem;">
-        <h2 style="font-size: 1.8rem;">Featured Content</h2>
-        <p>High-performing content across Instagram, TikTok, and social platforms.</p>
-      </div>
-
-      <div class="content-grid">
-        <!-- Instagram Embed 1 -->
-        <div class="content-card">
-          <h3>Viral Reel #1</h3>
-          <p>Behind-the-scenes of an immersive installation that captured millions of views
-             and introduced new audiences to digital art.</p>
-          <div class="video-container">
-            <iframe src="https://www.instagram.com/p/CmH3izDNF_n/embed" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen></iframe>
-          </div>
+        <div class="instagram-embed">
+          <blockquote 
+            class="instagram-media" 
+            data-instgrm-permalink="https://www.instagram.com/reel/Cvu2Rfyg1CL/"
+            data-instgrm-version="14"
+            style="width:100%; max-width:400px;">
+          </blockquote>
         </div>
-
-        <!-- Instagram Embed 2 -->
-        <div class="content-card">
-          <h3>Viral Reel #2</h3>
-          <p>Point cloud visualization tutorial that went viral in the 3D art community,
-             driving thousands of new creators to explore the medium.</p>
-          <div class="video-container">
-            <iframe src="https://www.instagram.com/p/Czw3ifGOkQX/embed" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen></iframe>
-          </div>
+        <div class="instagram-embed">
+          <blockquote 
+            class="instagram-media" 
+            data-instgrm-permalink="https://www.instagram.com/reel/Cyeq6c6ueuR/"
+            data-instgrm-version="14"
+            style="width:100%; max-width:400px;">
+          </blockquote>
         </div>
-
-        <!-- Instagram Embed 3 -->
-        <div class="content-card">
-          <h3>Viral Reel #3</h3>
-          <p>Time-lapse creation process showing the transformation from raw scan to finished
-             artwork—authentic content that resonated deeply.</p>
-          <div class="video-container">
-            <iframe src="https://www.instagram.com/p/DBM72ROsKU8/embed" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- Instagram Embed 4 -->
-        <div class="content-card">
-          <h3>Viral Reel #4</h3>
-          <p>Immersive experience documentation that showcased the emotional impact of
-             digital art installations on visitors.</p>
-          <div class="video-container">
-            <iframe src="https://www.instagram.com/p/CuAjg_wukkA/embed" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- Instagram Embed 5 -->
-        <div class="content-card">
-          <h3>Viral Reel #5</h3>
-          <p>Creative process breakdown that inspired thousands of artists to experiment with new techniques.</p>
-          <div class="video-container">
-            <iframe src="https://www.instagram.com/p/CjEr1EWDgCV/embed" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <!-- Instagram Embed 6 -->
-        <div class="content-card">
-          <h3>Viral Reel #6</h3>
-          <p>Experimental visual effects showcase demonstrating innovative motion graphics techniques.</p>
-          <div class="video-container">
-            <iframe src="https://www.instagram.com/p/CunsorONEy9/embed" frameborder="0" scrolling="no" allowtransparency="true" allowfullscreen></iframe>
-          </div>
+        <div class="instagram-embed">
+          <blockquote 
+            class="instagram-media" 
+            data-instgrm-permalink="https://www.instagram.com/reel/CvEl5jauObv/"
+            data-instgrm-version="14"
+            style="width:100%; max-width:400px;">
+          </blockquote>
         </div>
       </div>
-
-      <!-- Content Strategy Section -->
-      <div class="content-card" style="margin-top: 4rem;">
-        <h3 style="text-align: center; margin-bottom: 1.5rem;">The Strategy</h3>
-        <div class="content-grid" style="margin-top: 0;">
-          <div>
-            <h4 style="margin-bottom: 0.5rem;">Authenticity First</h4>
-            <p style="font-size: 0.95rem;">Audiences connect with real moments. Every viral piece starts with genuine 
-               curiosity and passion for the subject.</p>
-          </div>
-          <div>
-            <h4 style="margin-bottom: 0.5rem;">Hook in 3 Seconds</h4>
-            <p style="font-size: 0.95rem;">In a fast-scrolling world, the opening moments matter. Every video is 
-               crafted to stop the scroll immediately.</p>
-          </div>
-          <div>
-            <h4 style="margin-bottom: 0.5rem;">Value Exchange</h4>
-            <p style="font-size: 0.95rem;">Whether educational, entertaining, or inspiring, every piece of content 
-               gives the viewer something worth their time.</p>
-          </div>
-          <div>
-            <h4 style="margin-bottom: 0.5rem;">Community Building</h4>
-            <p style="font-size: 0.95rem;">Views are just the start. The real goal is building engaged communities 
-               around shared interests and creative exploration.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Platforms -->
-      <section class="clients-section" style="margin-top: 4rem;">
-        <h3>Active Platforms</h3>
-        <div class="clients-grid">
-          <span class="client-tag">Instagram</span>
-          <span class="client-tag">TikTok</span>
-          <span class="client-tag">YouTube Shorts</span>
-          <span class="client-tag">Twitter/X</span>
-        </div>
-      </section>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact-section">
-      <h2>Social Strategy Inquiries</h2>
-      <p>Need content that converts? Let's create something viral together.</p>
-      <a href="mailto:hello@massimovendola.com" class="email-link">hello@massimovendola.com</a>
+      <p>Brooklyn, New York</p>
+      <p><a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener noreferrer">@mv.nyc</a></p>
     </section>
   </main>
 
@@ -177,15 +101,6 @@
   </footer>
 
   <script src="particles.js"></script>
-  <script>
-    function toggleMenu() {
-      document.getElementById('nav-links').classList.toggle('active');
-    }
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('nav-links').classList.remove('active');
-      });
-    });
-  </script>
+  <script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>

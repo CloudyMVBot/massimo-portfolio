@@ -4,125 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Massimo Vendola | 3D Art, Content & Strategy</title>
-  <meta name="description" content="Massimo Vendola - Transforming spaces with 3D art, content creation, and digital strategy.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Particle Background -->
-  <canvas id="particle-canvas"></canvas>
-
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="logo">MV</a>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="documentaries.html">Documentaries</a></li>
-        <li><a href="digital-art.html">Digital Art</a></li>
-        <li><a href="viral-selects.html">Viral Selects</a></li>
-        <li><a href="exhibited-work.html">Exhibited Work</a></li>
-        <li><a href="branded-content.html">Branded Content</a></li>
-      </ul>
+  <canvas id="particles-canvas"></canvas>
+  
+  <nav>
+    <div class="logo">
+      <a href="index.html">MV</a>
     </div>
+    <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="documentaries.html">Documentaries</a></li>
+      <li><a href="digital-art.html">Digital Art</a></li>
+      <li><a href="viral-selects.html">Viral Selects</a></li>
+      <li><a href="exhibited-work.html">Exhibited Work</a></li>
+      <li><a href="branded-content.html">Brand Content</a></li>
+    </ul>
   </nav>
 
   <main>
-    <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-content animate-fade-in">
-        <h1>Transforming Spaces with 3D Art, Content & Strategy</h1>
-        <p class="hero-subtitle">Massimo Vendola</p>
-        <p class="hero-description">
-          I turn environments into immersive digital experiences and drive real engagement online. 
-          With a proven track record of producing content that has garnered millions of views, 
-          I help brands and artists tell their stories through cutting-edge visual media.
-        </p>
+      <h1>Transforming Spaces with 3D Art, Content & Strategy</h1>
+      <p class="tagline">I turn environments into immersive digital experiences and drive real engagement online</p>
+      <p class="bio">With a proven track record of producing content that has garnered millions of views, Massimo specializes in crafting engaging promotional videos, documentaries, explainer content and content strategies for social media. He has worked on high-impact campaigns, including creating promotional videos for NFT projects with renowned artists like Refik Anadol, Fuse, and Vince Fraser. Massimo's expertise lies in merging creative storytelling with data-driven insights, driving visibility and elevating brands through immersive media, point cloud animations, and targeted social media strategies.</p>
+    </section>
+
+    <section class="worked-with">
+      <h2>Worked With</h2>
+      <div class="logos">
+        <span>ARTECHOUSE</span>
+        <span>Polycam</span>
+        <span>NASA</span>
+        <span>SmallRig</span>
+        <span>Kiri Engine</span>
+        <span>Intel</span>
+        <span>Future Classic</span>
+        <span>Motion Array</span>
+        <span>Kwik Learning</span>
+        <span>Looking Glass</span>
+        <span>Marshmello/Human Person</span>
+        <span>Nohlab</span>
+        <span>JALC</span>
+        <span>BnA Hotels</span>
       </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <span class="stat-number">M+</span>
-          <span class="stat-label">Views Generated</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">15+</span>
-          <span class="stat-label">Global Brands</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">4</span>
-          <span class="stat-label">Cities Exhibited</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Featured Work Preview -->
-    <section class="content-section">
-      <div class="section-header">
-        <h2>Selected Work</h2>
-        <p>Explore my work across documentaries, digital art, viral content, and brand partnerships.</p>
-      </div>
-      
-      <div class="content-grid">
-        <a href="documentaries.html" class="content-card" style="text-decoration: none; color: inherit;">
-          <h3>Documentaries</h3>
-          <p>Cinematic storytelling for ARTECHOUSE and cultural institutions, capturing the intersection of art and technology.</p>
-        </a>
-        <a href="digital-art.html" class="content-card" style="text-decoration: none; color: inherit;">
-          <h3>Digital Art & VFX</h3>
-          <p>Point cloud visualization, immersive installations, and experimental visual effects that push creative boundaries.</p>
-        </a>
-        <a href="viral-selects.html" class="content-card" style="text-decoration: none; color: inherit;">
-          <h3>Viral Selects</h3>
-          <p>Social media content engineered for engagement—millions of views and meaningful audience connection.</p>
-        </a>
-        <a href="exhibited-work.html" class="content-card" style="text-decoration: none; color: inherit;">
-          <h3>Exhibited Work</h3>
-          <p>Digital installations showcased in Miami, Amsterdam, Tokyo, and Wroclaw.</p>
-        </a>
-        <a href="branded-content.html" class="content-card" style="text-decoration: none; color: inherit;">
-          <h3>Branded Content</h3>
-          <p>Strategic partnerships with industry leaders including NASA, Polycam, SmallRig, and more.</p>
-        </a>
-      </div>
-    </section>
-
-    <!-- Clients Section -->
-    <section class="clients-section">
-      <h3>Trusted By</h3>
-      <div class="clients-grid">
-        <span class="client-tag">ARTECHOUSE</span>
-        <span class="client-tag">Polycam</span>
-        <span class="client-tag">NASA</span>
-        <span class="client-tag">SmallRig</span>
-        <span class="client-tag">Kiri Engine</span>
-        <span class="client-tag">Intel</span>
-        <span class="client-tag">Future Classic</span>
-        <span class="client-tag">Motion Array</span>
-        <span class="client-tag">Kwik Learning</span>
-        <span class="client-tag">Looking Glass</span>
-        <span class="client-tag">Marshmello</span>
-        <span class="client-tag">Nohlab</span>
-        <span class="client-tag">JALC</span>
-        <span class="client-tag">BnA Hotels</span>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
     <section class="contact-section">
-      <h2>Let's Work Together</h2>
-      <p>Have a project in mind? Let's create something extraordinary.</p>
-      <a href="mailto:hello@massimovendola.com" class="email-link">hello@massimovendola.com</a>
+      <p>Brooklyn, New York</p>
+      <p><a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener noreferrer">@mv.nyc</a></p>
     </section>
   </main>
 
@@ -131,18 +69,5 @@
   </footer>
 
   <script src="particles.js"></script>
-  <script>
-    // Mobile menu toggle
-    function toggleMenu() {
-      document.getElementById('nav-links').classList.toggle('active');
-    }
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('nav-links').classList.remove('active');
-      });
-    });
-  </script>
 </body>
 </html>

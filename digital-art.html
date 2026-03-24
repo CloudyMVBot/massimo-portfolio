@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Art & VFX | Massimo Vendola</title>
+  <meta name="description" content="Digital Art, VFX, and Point Cloud work - Massimo Vendola">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Particle Background -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">MV</a>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="documentaries.html">Documentaries</a></li>
+        <li><a href="digital-art.html" class="active">Digital Art</a></li>
+        <li><a href="viral-selects.html">Viral Selects</a></li>
+        <li><a href="exhibited-work.html">Exhibited Work</a></li>
+        <li><a href="branded-content.html">Branded Content</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="content-section">
+      <div class="section-header">
+        <h2>Digital Art & VFX</h2>
+        <p>Point cloud visualization, immersive installations, and experimental visual effects 
+           that transform physical spaces into digital experiences.</p>
+      </div>
+
+      <div class="content-grid">
+        <!-- Point Cloud Visualization -->
+        <div class="content-card">
+          <h3>Point Cloud Art</h3>
+          <p>Transforming real-world environments into ethereal point cloud visualizations. 
+             Using LiDAR and photogrammetry to capture spaces and reimagine them as flowing digital landscapes.</p>
+          <div class="video-container">
+            <div class="embed-placeholder">
+              <div class="icon">◈</div>
+              <p>Point cloud visualization</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- VFX Work -->
+        <div class="content-card">
+          <h3>Visual Effects</h3>
+          <p>Cinematic VFX for documentaries, branded content, and artistic projects—seamlessly 
+             blending digital elements with live footage.</p>
+          <div class="video-container">
+            <div class="embed-placeholder">
+              <div class="icon">✦</div>
+              <p>VFX reel</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Immersive Installations -->
+        <div class="content-card">
+          <h3>Immersive Installations</h3>
+          <p>Large-scale projection mapping and immersive environments created for galleries, 
+             events, and interactive experiences.</p>
+          <div class="video-container">
+            <div class="embed-placeholder">
+              <div class="icon">◉</div>
+              <p>Installation documentation</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Motion Graphics -->
+        <div class="content-card">
+          <h3>3D Motion Graphics</h3>
+          <p>Dynamic 3D animations and motion design for brands, events, and digital platforms—
+             bringing abstract concepts to life through movement.</p>
+          <div class="video-container">
+            <div class="embed-placeholder">
+              <div class="icon">◆</div>
+              <p>Motion graphics reel</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools & Technologies -->
+      <section class="clients-section" style="margin-top: 4rem;">
+        <h3>Tools & Technologies</h3>
+        <div class="clients-grid">
+          <span class="client-tag">Cinema 4D</span>
+          <span class="client-tag">After Effects</span>
+          <span class="client-tag">Houdini</span>
+          <span class="client-tag">Unity</span>
+          <span class="client-tag">Unreal Engine</span>
+          <span class="client-tag">Polycam</span>
+          <span class="client-tag">Kiri Engine</span>
+          <span class="client-tag">TouchDesigner</span>
+        </div>
+      </section>
+
+      <!-- Featured Project -->
+      <div class="content-card" style="margin-top: 4rem; text-align: center;">
+        <h3>Featured Project: Digital Landscapes</h3>
+        <p style="max-width: 600px; margin: 0 auto 2rem;">An ongoing exploration of space digitization, 
+           combining point cloud data with procedural animation to create living digital environments 
+           that breathe and evolve over time.</p>
+        <div class="video-container">
+          <div class="embed-placeholder">
+            <div class="icon">▶</div>
+            <p>Featured project video</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <h2>Digital Art Inquiries</h2>
+      <p>Looking for VFX, motion graphics, or immersive digital experiences?</p>
+      <a href="mailto:hello@massimovendola.com" class="email-link">hello@massimovendola.com</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Massimo Vendola. All rights reserved.</p>
+  </footer>
+
+  <script src="particles.js"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('active');
+    }
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-links').classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

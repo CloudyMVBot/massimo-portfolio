@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentaries | Massimo Vendola</title>
+  <meta name="description" content="Documentary work for ARTECHOUSE and cultural institutions - Massimo Vendola">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Particle Background -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">MV</a>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="documentaries.html" class="active">Documentaries</a></li>
+        <li><a href="digital-art.html">Digital Art</a></li>
+        <li><a href="viral-selects.html">Viral Selects</a></li>
+        <li><a href="exhibited-work.html">Exhibited Work</a></li>
+        <li><a href="branded-content.html">Branded Content</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="content-section">
+      <div class="section-header">
+        <h2>Documentaries</h2>
+        <p>Cinematic storytelling that captures the intersection of art, technology, and human experience. 
+           From ARTECHOUSE installations to cultural institution features.</p>
+      </div>
+
+      <div class="content-grid">
+        <!-- ARTECHOUSE Documentary -->
+        <div class="content-card">
+          <h3>ARTECHOUSE Studio</h3>
+          <p>A deep dive into the creative process behind ARTECHOUSE's immersive digital art installations, 
+             exploring how technology transforms physical spaces into emotional experiences.</p>
+          <div class="video-container">
+            <div class="embed-placeholder">
+              <div class="icon">▶</div>
+              <p>Documentary video embed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artist Profiles -->
+        <div class="content-card">
+          <h3>Artist Profile Series</h3>
+          <p>Intimate portraits of digital artists pushing the boundaries of creative expression, 
+             produced for ARTECHOUSE and cultural platforms.</p>
+          <div class="video-container">
+            <div class="embed-placeholder">
+              <div class="icon">▶</div>
+              <p>Artist profile video embed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exhibition Documentation -->
+        <div class="content-card">
+          <h3>Exhibition Documentaries</h3>
+          <p>Behind-the-scenes documentation of major digital art exhibitions, capturing the installation process, 
+             artist intent, and visitor reactions.</p>
+          <div class="video-container">
+            <div class="embed-placeholder">
+              <div class="icon">▶</div>
+              <p>Exhibition documentary embed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cultural Features -->
+        <div class="content-card">
+          <h3>Cultural Institution Features</h3>
+          <p>Short-form documentaries highlighting the intersection of traditional culture and contemporary 
+             digital art practices for museums and galleries.</p>
+          <div class="video-container">
+            <div class="embed-placeholder">
+              <div class="icon">▶</div>
+              <p>Cultural feature video embed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Documentary Stats -->
+      <div class="stats-grid" style="margin-top: 4rem;">
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Films Produced</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Institutions</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Years</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <h2>Documentary Inquiries</h2>
+      <p>Interested in documentary production for your institution or project?</p>
+      <a href="mailto:hello@massimovendola.com" class="email-link">hello@massimovendola.com</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Massimo Vendola. All rights reserved.</p>
+  </footer>
+
+  <script src="particles.js"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('active');
+    }
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-links').classList.remove('active');
+      });
+    });
+  </script>
+</body>
+</html>

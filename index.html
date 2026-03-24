@@ -1,265 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Massimo Vendola — Content & Strategy</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', system-ui, sans-serif; background: #141311; color: #faf2e9; overflow-x: hidden; }
-        #particle-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-        .content { position: relative; z-index: 10; }
-        ::selection { background: rgba(250, 242, 233, 0.2); }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-on-scroll { opacity: 0; }
-        .animate-on-scroll.visible { animation: fadeInUp 0.8s ease forwards; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Massimo Vendola | 3D Art, Content & Strategy</title>
+  <meta name="description" content="Massimo Vendola - Transforming spaces with 3D art, content creation, and digital strategy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <canvas id="particle-canvas"></canvas>
-    <div class="content">
-        <header class="fixed top-0 left-0 right-0 z-50">
-            <nav class="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
-                <a href="#" class="text-lg font-medium tracking-tight hover:opacity-80 transition-opacity">Massimo Vendola</a>
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#work" class="text-sm uppercase tracking-widest text-white/60 hover:text-white transition-colors">Work</a>
-                    <a href="#partnerships" class="text-sm uppercase tracking-widest text-white/60 hover:text-white transition-colors">Partnerships</a>
-                    <a href="#about" class="text-sm uppercase tracking-widest text-white/60 hover:text-white transition-colors">About</a>
-                    <a href="#contact" class="px-5 py-2.5 text-sm uppercase tracking-widest border border-white/30 hover:bg-white hover:text-[#141311] transition-all">Contact</a>
-                </div>
-            </nav>
-        </header>
+  <!-- Particle Background -->
+  <canvas id="particle-canvas"></canvas>
 
-        <section class="min-h-screen flex items-center justify-center px-6">
-            <div class="max-w-5xl mx-auto text-center">
-                <p class="animate-on-scroll text-sm uppercase tracking-[0.3em] text-white/60 mb-6">Content Creator & Strategist</p>
-                <h1 class="animate-on-scroll text-4xl md:text-6xl lg:text-7xl font-medium leading-[1.1] tracking-tight mb-8">
-                    Content that hits millions.
-                    <br><span class="text-white/60">Partnerships that drive results.</span>
-                </h1>
-                <p class="animate-on-scroll text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12 leading-relaxed">
-                    Transforming spaces with 3D art, content & strategy. Technical content for the brands building what's next.
-                </p>
-                <div class="animate-on-scroll flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#work" class="px-8 py-4 bg-white text-[#141311] font-medium uppercase tracking-widest text-sm hover:bg-white/90 transition-colors">View Work</a>
-                    <a href="#partnerships" class="px-8 py-4 border border-white/30 font-medium uppercase tracking-widest text-sm hover:bg-white hover:text-[#141311] transition-all">Partner With Me</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="work" class="py-32 px-6">
-            <div class="max-w-5xl mx-auto">
-                <h2 class="animate-on-scroll text-sm uppercase tracking-[0.3em] text-white/60 mb-16">Selected Work</h2>
-                <div class="space-y-24">
-                    <div class="animate-on-scroll grid md:grid-cols-2 gap-12 items-center">
-                        <div class="aspect-video bg-white/5 rounded-lg overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80" alt="3D Art Project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div>
-                            <span class="text-xs uppercase tracking-widest text-white/40">3D Art & Direction</span>
-                            <h3 class="text-2xl md:text-3xl font-medium mt-3 mb-4">Spatial Installations</h3>
-                            <p class="text-white/70 leading-relaxed mb-6">Transforming physical and virtual spaces with immersive 3D art installations. From concept to execution, creating environments that captivate and inspire.</p>
-                            <a href="#" class="text-sm uppercase tracking-widest border-b border-white/30 pb-1 hover:border-white transition-colors">View Project</a>
-                        </div>
-                    </div>
-                    <div class="animate-on-scroll grid md:grid-cols-2 gap-12 items-center">
-                        <div class="md:order-2 aspect-video bg-white/5 rounded-lg overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80" alt="Tech Content" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="md:order-1">
-                            <span class="text-xs uppercase tracking-widest text-white/40">Content Strategy</span>
-                            <h3 class="text-2xl md:text-3xl font-medium mt-3 mb-4">Technical Content Series</h3>
-                            <p class="text-white/70 leading-relaxed mb-6">Deep-dives into emerging technology, from AI workflows to creative tools. Building engaged communities around complex topics through accessible storytelling.</p>
-                            <a href="#" class="text-sm uppercase tracking-widest border-b border-white/30 pb-1 hover:border-white transition-colors">View Project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="partnerships" class="py-32 px-6 border-t border-white/10">
-            <div class="max-w-5xl mx-auto">
-                <h2 class="animate-on-scroll text-sm uppercase tracking-[0.3em] text-white/60 mb-16">Partnerships</h2>
-                <div class="animate-on-scroll grid md:grid-cols-3 gap-8 mb-16">
-                    <div class="text-center">
-                        <div class="text-5xl font-light mb-4">50M+</div>
-                        <p class="text-white/60 text-sm uppercase tracking-widest">Total Views</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-5xl font-light mb-4">200+</div>
-                        <p class="text-white/60 text-sm uppercase tracking-widest">Brand Partners</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-5xl font-light mb-4">15%</div>
-                        <p class="text-white/60 text-sm uppercase tracking-widest">Avg. Engagement</p>
-                    </div>
-                </div>
-                <div class="animate-on-scroll flex flex-wrap justify-center gap-12 opacity-40">
-                    <span class="text-xl font-medium">NVIDIA</span>
-                    <span class="text-xl font-medium">Adobe</span>
-                    <span class="text-xl font-medium">Unity</span>
-                    <span class="text-xl font-medium">Unreal</span>
-                    <span class="text-xl font-medium">Blender</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="py-32 px-6 border-t border-white/10">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="animate-on-scroll text-sm uppercase tracking-[0.3em] text-white/60 mb-8">About</h2>
-                <p class="animate-on-scroll text-2xl md:text-3xl font-light leading-relaxed mb-8">
-                    I'm a content creator and strategist specializing in technical content for creative and emerging technology brands.
-                </p>
-                <p class="animate-on-scroll text-white/70 leading-relaxed">
-                    With a background spanning 3D art, video production, and digital strategy, I help brands tell stories that resonate with technical audiences. From product launches to educational series, I create content that drives engagement and builds community.
-                </p>
-            </div>
-        </section>
-
-        <section id="contact" class="py-32 px-6 border-t border-white/10">
-            <div class="max-w-xl mx-auto text-center">
-                <h2 class="animate-on-scroll text-sm uppercase tracking-[0.3em] text-white/60 mb-8">Get in Touch</h2>
-                <p class="animate-on-scroll text-white/70 mb-12">Ready to create something together? Let's talk about your next project.</p>
-                <a href="mailto:hello@massimovendola.com" class="animate-on-scroll inline-block px-10 py-4 bg-white text-[#141311] font-medium uppercase tracking-widest text-sm hover:bg-white/90 transition-colors">hello@massimovendola.com</a>
-            </div>
-        </section>
-
-        <footer class="py-12 px-6 border-t border-white/10">
-            <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-                <p class="text-white/40 text-sm">© 2024 Massimo Vendola. All rights reserved.</p>
-                <div class="flex gap-8">
-                    <a href="#" class="text-white/40 hover:text-white text-sm transition-colors">Twitter</a>
-                    <a href="#" class="text-white/40 hover:text-white text-sm transition-colors">LinkedIn</a>
-                    <a href="#" class="text-white/40 hover:text-white text-sm transition-colors">YouTube</a>
-                </div>
-            </div>
-        </footer>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">MV</a>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="documentaries.html">Documentaries</a></li>
+        <li><a href="digital-art.html">Digital Art</a></li>
+        <li><a href="viral-selects.html">Viral Selects</a></li>
+        <li><a href="exhibited-work.html">Exhibited Work</a></li>
+        <li><a href="branded-content.html">Branded Content</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <script>
-        const canvas = document.getElementById('particle-canvas');
-        const ctx = canvas.getContext('2d');
-        let particles = [];
-        let mouse = { x: null, y: null, radius: 150 };
-        let animationId;
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content animate-fade-in">
+        <h1>Transforming Spaces with 3D Art, Content & Strategy</h1>
+        <p class="hero-subtitle">Massimo Vendola</p>
+        <p class="hero-description">
+          I turn environments into immersive digital experiences and drive real engagement online. 
+          With a proven track record of producing content that has garnered millions of views, 
+          I help brands and artists tell their stories through cutting-edge visual media.
+        </p>
+      </div>
+    </section>
 
-        function resize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        resize();
-        window.addEventListener('resize', resize);
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">M+</span>
+          <span class="stat-label">Views Generated</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">15+</span>
+          <span class="stat-label">Global Brands</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4</span>
+          <span class="stat-label">Cities Exhibited</span>
+        </div>
+      </div>
+    </section>
 
-        window.addEventListener('mousemove', (e) => {
-            mouse.x = e.x;
-            mouse.y = e.y;
-        });
+    <!-- Featured Work Preview -->
+    <section class="content-section">
+      <div class="section-header">
+        <h2>Selected Work</h2>
+        <p>Explore my work across documentaries, digital art, viral content, and brand partnerships.</p>
+      </div>
+      
+      <div class="content-grid">
+        <a href="documentaries.html" class="content-card" style="text-decoration: none; color: inherit;">
+          <h3>Documentaries</h3>
+          <p>Cinematic storytelling for ARTECHOUSE and cultural institutions, capturing the intersection of art and technology.</p>
+        </a>
+        <a href="digital-art.html" class="content-card" style="text-decoration: none; color: inherit;">
+          <h3>Digital Art & VFX</h3>
+          <p>Point cloud visualization, immersive installations, and experimental visual effects that push creative boundaries.</p>
+        </a>
+        <a href="viral-selects.html" class="content-card" style="text-decoration: none; color: inherit;">
+          <h3>Viral Selects</h3>
+          <p>Social media content engineered for engagement—millions of views and meaningful audience connection.</p>
+        </a>
+        <a href="exhibited-work.html" class="content-card" style="text-decoration: none; color: inherit;">
+          <h3>Exhibited Work</h3>
+          <p>Digital installations showcased in Miami, Amsterdam, Tokyo, and Wroclaw.</p>
+        </a>
+        <a href="branded-content.html" class="content-card" style="text-decoration: none; color: inherit;">
+          <h3>Branded Content</h3>
+          <p>Strategic partnerships with industry leaders including NASA, Polycam, SmallRig, and more.</p>
+        </a>
+      </div>
+    </section>
 
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.5;
-                this.baseX = this.x;
-                this.baseY = this.y;
-                this.density = Math.random() * 30 + 1;
-                this.opacity = Math.random() * 0.5 + 0.1;
-            }
-            update() {
-                let dx = mouse.x - this.x;
-                let dy = mouse.y - this.y;
-                let distance = Math.sqrt(dx * dx + dy * dy);
-                let forceDirectionX = dx / distance;
-                let forceDirectionY = dy / distance;
-                let maxDistance = mouse.radius;
-                let force = (maxDistance - distance) / maxDistance;
-                let directionX = forceDirectionX * force * this.density;
-                let directionY = forceDirectionY * force * this.density;
-                if (distance < mouse.radius) {
-                    this.x -= directionX;
-                    this.y -= directionY;
-                } else {
-                    if (this.x !== this.baseX) {
-                        let dx = this.x - this.baseX;
-                        this.x -= dx / 10;
-                    }
-                    if (this.y !== this.baseY) {
-                        let dy = this.y - this.baseY;
-                        this.y -= dy / 10;
-                    }
-                }
-            }
-            draw() {
-                ctx.fillStyle = `rgba(250, 242, 233, ${this.opacity})`;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.closePath();
-                ctx.fill();
-            }
-        }
+    <!-- Clients Section -->
+    <section class="clients-section">
+      <h3>Trusted By</h3>
+      <div class="clients-grid">
+        <span class="client-tag">ARTECHOUSE</span>
+        <span class="client-tag">Polycam</span>
+        <span class="client-tag">NASA</span>
+        <span class="client-tag">SmallRig</span>
+        <span class="client-tag">Kiri Engine</span>
+        <span class="client-tag">Intel</span>
+        <span class="client-tag">Future Classic</span>
+        <span class="client-tag">Motion Array</span>
+        <span class="client-tag">Kwik Learning</span>
+        <span class="client-tag">Looking Glass</span>
+        <span class="client-tag">Marshmello</span>
+        <span class="client-tag">Nohlab</span>
+        <span class="client-tag">JALC</span>
+        <span class="client-tag">BnA Hotels</span>
+      </div>
+    </section>
 
-        function init() {
-            particles = [];
-            let numberOfParticles = (canvas.width * canvas.height) / 9000;
-            for (let i = 0; i < numberOfParticles; i++) {
-                particles.push(new Particle());
-            }
-        }
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <h2>Let's Work Together</h2>
+      <p>Have a project in mind? Let's create something extraordinary.</p>
+      <a href="mailto:hello@massimovendola.com" class="email-link">hello@massimovendola.com</a>
+    </section>
+  </main>
 
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
-            }
-            connect();
-            animationId = requestAnimationFrame(animate);
-        }
+  <footer>
+    <p>&copy; 2024 Massimo Vendola. All rights reserved.</p>
+  </footer>
 
-        function connect() {
-            let opacityValue = 1;
-            for (let a = 0; a < particles.length; a++) {
-                for (let b = a; b < particles.length; b++) {
-                    let distance = ((particles[a].x - particles[b].x) * (particles[a].x - particles[b].x))
-                        + ((particles[a].y - particles[b].y) * (particles[a].y - particles[b].y));
-                    if (distance < (canvas.width / 7) * (canvas.height / 7)) {
-                        opacityValue = 1 - (distance / 20000);
-                        ctx.strokeStyle = `rgba(250, 242, 233, ${opacityValue * 0.15})`;
-                        ctx.lineWidth = 1;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[a].x, particles[a].y);
-                        ctx.lineTo(particles[b].x, particles[b].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
+  <script src="particles.js"></script>
+  <script>
+    // Mobile menu toggle
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('active');
+    }
 
-        init();
-        animate();
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-    </script>
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-links').classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>

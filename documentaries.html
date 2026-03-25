@@ -1,105 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documentary Work — Massimo Vendola</title>
-  <meta name="description" content="From ARTECHOUSE storyteller, now creating my own narratives.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentary Work — Massimo Vendola</title>
+    <meta name="description" content="From ARTECHOUSE storyteller, now creating my own narratives.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <canvas id="particles-canvas"></canvas>
-  
-  <nav class="nav">
-    <div class="nav-content">
-      <a href="index.html" class="nav-logo">MV</a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="documentaries.html" class="active">Documentaries</a></li>
-        <li><a href="digital-art.html">Digital Art</a></li>
-        <li><a href="branded-content.html">Branded Content</a></li>
-        <li><a href="viral-selects.html">Viral Selects</a></li>
-        <li><a href="exhibited-work.html">Exhibited Work</a></li>
-      </ul>
-      <div class="nav-toggle" id="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </nav>
+    <!-- Particle Canvas Background -->
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
 
-  <main class="main">
-    <header class="page-header">
-      <div class="container">
-        <h1 class="page-title">Documentary Work</h1>
-        <p class="page-subtitle">From ARTECHOUSE story teller, now creating my own narratives.</p>
-      </div>
-    </header>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">MV</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="documentaries.html" class="nav-link active">Documentaries</a></li>
+                <li><a href="digital-art.html" class="nav-link">Digital Art</a></li>
+                <li><a href="viral-selects.html" class="nav-link">Viral Selects</a></li>
+                <li><a href="exhibited-work.html" class="nav-link">Exhibited Work</a></li>
+                <li><a href="branded-content.html" class="nav-link">Branded Content</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <section class="container">
-      <div class="video-grid">
-        <div class="video-item">
-          <iframe 
-            src="https://www.youtube.com/embed/GERcOq4Pq74" 
-            title="Documentary 1"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-item">
-          <iframe 
-            src="https://www.youtube.com/embed/iTx-M-0IL6Y" 
-            title="Documentary 2"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-item">
-          <iframe 
-            src="https://www.youtube.com/embed/QLFUSDDeRkQ" 
-            title="Documentary 3"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div class="video-item">
-          <iframe 
-            src="https://www.youtube.com/embed/w1P78txOBfk" 
-            title="Documentary 4"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-      
-      <div class="cta-section">
-        <p class="cta-text">Most recent project... Scroll down for more</p>
-      </div>
-    </section>
+    <main>
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="container">
+                <h1 class="page-title reveal">Documentary Work</h1>
+                <p class="page-subtitle reveal">From ARTECHOUSE story teller, now creating my own narratives.</p>
+            </div>
+        </header>
 
+        <!-- Video Grid -->
+        <section class="container">
+            <div class="video-grid">
+                <div class="video-item reveal">
+                    <iframe 
+                        src="https://www.youtube.com/embed/GERcOq4Pq74" 
+                        title="Documentary 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-item reveal">
+                    <iframe 
+                        src="https://www.youtube.com/embed/iTx-M-0IL6Y" 
+                        title="Documentary 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-item reveal">
+                    <iframe 
+                        src="https://www.youtube.com/embed/QLFUSDDeRkQ" 
+                        title="Documentary 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-item reveal">
+                    <iframe 
+                        src="https://www.youtube.com/embed/w1P78txOBfk" 
+                        title="Documentary 4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            
+            <div class="cta-section reveal">
+                <a href="https://www.youtube.com/@massimovendola" target="_blank" rel="noopener" class="link-button">Click here to see more</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <p class="footer-location">Brooklyn, New York</p>
-          <div class="footer-social">
-            <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener">@mv.nyc</a>
-          </div>
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-location">Brooklyn, New York</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener">@mv.nyc</a>
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
-  </main>
 
-  <script src="particles.js"></script>
-  <script>
-    const navToggle = document.getElementById('nav-toggle');
-    const navLinks = document.getElementById('nav-links');
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

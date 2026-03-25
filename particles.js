@@ -13,7 +13,7 @@
     
     // Configuration
     const config = {
-        particleCount: 150,
+        particleCount: 120,
         connectionDistance: 120,
         maxConnections: 4,
         particleSpeed: 0.3,
@@ -24,16 +24,18 @@
     let particles = [];
     let animationId = null;
     let isActive = true;
+    let isVisible = true;
 
     // Resize handling
     function resize() {
         const dpr = window.devicePixelRatio || 1;
-        const rect = canvas.parentElement.getBoundingClientRect();
+        const width = window.innerWidth;
+        const height = window.innerHeight;
         
-        canvas.width = rect.width * dpr;
-        canvas.height = rect.height * dpr;
-        canvas.style.width = rect.width + 'px';
-        canvas.style.height = rect.height + 'px';
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
         
         ctx.scale(dpr, dpr);
     }
@@ -43,13 +45,13 @@
         constructor() {
             this.reset();
             // Start at random positions
-            this.x = Math.random() * canvas.width / (window.devicePixelRatio || 1);
-            this.y = Math.random() * canvas.height / (window.devicePixelRatio || 1);
+            this.x = Math.random() * window.innerWidth;
+            this.y = Math.random() * window.innerHeight;
         }
 
         reset() {
-            const width = canvas.width / (window.devicePixelRatio || 1);
-            const height = canvas.height / (window.devicePixelRatio || 1);
+            const width = window.innerWidth;
+            const height = window.innerHeight;
             
             this.x = Math.random() * width;
             this.y = Math.random() * height;
@@ -61,8 +63,8 @@
         }
 
         update() {
-            const width = canvas.width / (window.devicePixelRatio || 1);
-            const height = canvas.height / (window.devicePixelRatio || 1);
+            const width = window.innerWidth;
+            const height = window.innerHeight;
             
             this.x += this.vx;
             this.y += this.vy;
@@ -123,7 +125,7 @@
 
     // Animation loop
     function animate() {
-        if (!isActive) return;
+        if (!isActive || !isVisible) return;
         
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         
@@ -142,12 +144,12 @@
     // Visibility handling
     function handleVisibility() {
         if (document.hidden) {
-            isActive = false;
+            isVisible = false;
             if (animationId) {
                 cancelAnimationFrame(animationId);
             }
         } else {
-            isActive = true;
+            isVisible = true;
             animate();
         }
     }

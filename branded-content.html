@@ -1,284 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brand Partnered Content — Massimo Vendola</title>
-  <meta name="description" content="I team up with brands to spark real engagement. Let's connect and make your next campaign pop.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Partnered Content — Massimo Vendola</title>
+    <meta name="description" content="I team up with brands to spark real engagement. Let's connect and make your next campaign pop.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <canvas id="particles-canvas"></canvas>
-  
-  <nav class="nav">
-    <div class="nav-content">
-      <a href="index.html" class="nav-logo">MV</a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="documentaries.html">Documentaries</a></li>
-        <li><a href="digital-art.html">Digital Art</a></li>
-        <li><a href="branded-content.html" class="active">Branded Content</a></li>
-        <li><a href="viral-selects.html">Viral Selects</a></li>
-        <li><a href="exhibited-work.html">Exhibited Work</a></li>
-      </ul>
-      <div class="nav-toggle" id="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </nav>
+    <!-- Particle Canvas Background -->
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
 
-  <main class="main">
-    <header class="page-header">
-      <div class="container">
-        <h1 class="page-title">Brand Partnered Content</h1>
-        <p class="page-description">I team up with brands to spark real engagement. Let's connect and make your next campaign pop.</p>
-      </div>
-    </header>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">MV</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="documentaries.html" class="nav-link">Documentaries</a></li>
+                <li><a href="digital-art.html" class="nav-link">Digital Art</a></li>
+                <li><a href="viral-selects.html" class="nav-link">Viral Selects</a></li>
+                <li><a href="exhibited-work.html" class="nav-link">Exhibited Work</a></li>
+                <li><a href="branded-content.html" class="nav-link active">Branded Content</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <section class="container">
-      <div class="expandable-cards">
-        <div class="expandable-card" data-reel="https://www.instagram.com/reel/ChZ9KxYvmm1/">
-          <div class="card-header">
-            <div class="brand-logo">SR</div>
-            <h3 class="card-title">SmallRig</h3>
-            <span class="card-indicator">Click to view</span>
-          </div>
-          <div class="card-content">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/ChZ9KxYvmm1/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/ChZ9KxYvmm1/">View on Instagram</a>
-            </blockquote>
-          </div>
-        </div>
-        
-        <div class="expandable-card" data-reel="https://www.instagram.com/reel/C9tNG-bMGeB/">
-          <div class="card-header">
-            <div class="brand-logo">PC</div>
-            <h3 class="card-title">Polycam</h3>
-            <span class="card-indicator">Click to view</span>
-          </div>
-          <div class="card-content">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C9tNG-bMGeB/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/C9tNG-bMGeB/">View on Instagram</a>
-            </blockquote>
-          </div>
-        </div>
-        
-        <div class="expandable-card" data-reel="https://www.instagram.com/reel/CmctQeChbb1/">
-          <div class="card-header">
-            <div class="brand-logo nasa-logo">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+    <main>
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="container">
+                <h1 class="page-title reveal">Brand Partnered Content</h1>
+                <p class="page-description reveal">I team up with brands to spark real engagement. Let's connect and make your next campaign pop.</p>
             </div>
-            <h3 class="card-title">NASA</h3>
-            <span class="card-indicator">Click to view</span>
-          </div>
-          <div class="card-content">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CmctQeChbb1/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/CmctQeChbb1/">View on Instagram</a>
-            </blockquote>
-          </div>
-        </div>
-        
-        <div class="expandable-card" data-reel="https://www.instagram.com/reel/C8U5QvmOVLM/">
-          <div class="card-header">
-            <div class="brand-logo">KE</div>
-            <h3 class="card-title">Kiri Engine</h3>
-            <span class="card-indicator">Click to view</span>
-          </div>
-          <div class="card-content">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C8U5QvmOVLM/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/C8U5QvmOVLM/">View on Instagram</a>
-            </blockquote>
-          </div>
-        </div>
-        
-        <div class="expandable-card" data-reel="https://www.instagram.com/reel/C_intel_sample/">
-          <div class="card-header">
-            <div class="brand-logo intel-logo">
-              <svg viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="6" width="16" height="12" rx="1"/><text x="12" y="14" text-anchor="middle" fill="#141311" font-size="7" font-weight="bold">intel</text></svg>
-            </div>
-            <h3 class="card-title">Intel</h3>
-            <span class="card-indicator">Click to view</span>
-          </div>
-          <div class="card-content">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C_intel_sample/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/C_intel_sample/">View on Instagram</a>
-            </blockquote>
-          </div>
-        </div>
-        
-        <div class="expandable-card" data-reel="https://www.instagram.com/reel/C_fc_sample/">
-          <div class="card-header">
-            <div class="brand-logo">FC</div>
-            <h3 class="card-title">Future Classic</h3>
-            <span class="card-indicator">Click to view</span>
-          </div>
-          <div class="card-content">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C_fc_sample/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/C_fc_sample/">View on Instagram</a>
-            </blockquote>
-          </div>
-        </div>
-        
-        <div class="expandable-card" data-reel="https://www.instagram.com/reel/C_ma_sample/">
-          <div class="card-header">
-            <div class="brand-logo">MA</div>
-            <h3 class="card-title">Motion Array</h3>
-            <span class="card-indicator">Click to view</span>
-          </div>
-          <div class="card-content">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C_ma_sample/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/C_ma_sample/">View on Instagram</a>
-            </blockquote>
-          </div>
-        </div>
-        
-        <div class="expandable-card" data-reel="https://www.instagram.com/reel/C_kw_sample/">
-          <div class="card-header">
-            <div class="brand-logo">KW</div>
-            <h3 class="card-title">Kwik Learning</h3>
-            <span class="card-indicator">Click to view</span>
-          </div>
-          <div class="card-content">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C_kw_sample/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/C_kw_sample/">View on Instagram</a>
-            </blockquote>
-          </div>
-        </div>
-        
-        <div class="expandable-card" data-reel="https://www.instagram.com/reel/C_lg_sample/">
-          <div class="card-header">
-            <div class="brand-logo">LG</div>
-            <h3 class="card-title">Looking Glass</h3>
-            <span class="card-indicator">Click to view</span>
-          </div>
-          <div class="card-content">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C_lg_sample/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/C_lg_sample/">View on Instagram</a>
-            </blockquote>
-          </div>
-        </div>
-        
-        <div class="expandable-card" data-reel="https://www.instagram.com/reel/C_mm_sample/">
-          <div class="card-header">
-            <div class="brand-logo marshmello-logo">
-              <svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>
-            </div>
-            <h3 class="card-title">Marshmello / Human Person</h3>
-            <span class="card-indicator">Click to view</span>
-          </div>
-          <div class="card-content">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C_mm_sample/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/C_mm_sample/">View on Instagram</a>
-            </blockquote>
-          </div>
-        </div>
-        
-        <div class="expandable-card" data-reel="https://www.instagram.com/reel/C_nh_sample/">
-          <div class="card-header">
-            <div class="brand-logo">NO</div>
-            <h3 class="card-title">Nohlab</h3>
-            <span class="card-indicator">Click to view</span>
-          </div>
-          <div class="card-content">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C_nh_sample/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/C_nh_sample/">View on Instagram</a>
-            </blockquote>
-          </div>
-        </div>
-        
-        <div class="expandable-card" data-reel="https://www.instagram.com/reel/C_jl_sample/">
-          <div class="card-header">
-            <div class="brand-logo">JL</div>
-            <h3 class="card-title">JALC</h3>
-            <span class="card-indicator">Click to view</span>
-          </div>
-          <div class="card-content">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C_jl_sample/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/C_jl_sample/">View on Instagram</a>
-            </blockquote>
-          </div>
-        </div>
-        
-        <div class="expandable-card" data-reel="https://www.instagram.com/reel/C_bna_sample/">
-          <div class="card-header">
-            <div class="brand-logo">Bn</div>
-            <h3 class="card-title">BnA Hotels</h3>
-            <span class="card-indicator">Click to view</span>
-          </div>
-          <div class="card-content">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C_bna_sample/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/C_bna_sample/">View on Instagram</a>
-            </blockquote>
-          </div>
-        </div>
-        
-        <div class="expandable-card" data-reel="https://www.instagram.com/reel/C_art_sample/">
-          <div class="card-header">
-            <div class="brand-logo artechouse-logo">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 19h20L12 2zm0 4l6.5 11h-13L12 6z"/></svg>
-            </div>
-            <h3 class="card-title">ARTECHOUSE</h3>
-            <span class="card-indicator">Click to view</span>
-          </div>
-          <div class="card-content">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C_art_sample/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/C_art_sample/">View on Instagram</a>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-      
-      <div class="cta-section">
-        <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener" class="link-button">Click here to see more</a>
-      </div>
-    </section>
+        </header>
 
+        <!-- Expandable Cards -->
+        <section class="container">
+            <div class="expandable-cards">
+                <div class="expandable-card reveal" data-brand="smallrig">
+                    <div class="card-header">
+                        <div class="brand-logo">SR</div>
+                        <h3 class="card-title">SmallRig</h3>
+                        <span class="card-indicator">Click to view</span>
+                    </div>
+                    <div class="card-content">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/ChZ9KxYvmm1/" data-instgrm-version="14">
+                            <a href="https://www.instagram.com/reel/ChZ9KxYvmm1/">View on Instagram</a>
+                        </blockquote>
+                    </div>
+                </div>
+                
+                <div class="expandable-card reveal" data-brand="polycam">
+                    <div class="card-header">
+                        <div class="brand-logo">PC</div>
+                        <h3 class="card-title">Polycam</h3>
+                        <span class="card-indicator">Click to view</span>
+                    </div>
+                    <div class="card-content">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C9tNG-bMGeB/" data-instgrm-version="14">
+                            <a href="https://www.instagram.com/reel/C9tNG-bMGeB/">View on Instagram</a>
+                        </blockquote>
+                    </div>
+                </div>
+                
+                <div class="expandable-card reveal" data-brand="nasa">
+                    <div class="card-header">
+                        <div class="brand-logo">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                        </div>
+                        <h3 class="card-title">NASA</h3>
+                        <span class="card-indicator">Click to view</span>
+                    </div>
+                    <div class="card-content">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CmctQeChbb1/" data-instgrm-version="14">
+                            <a href="https://www.instagram.com/reel/CmctQeChbb1/">View on Instagram</a>
+                        </blockquote>
+                    </div>
+                </div>
+                
+                <div class="expandable-card reveal" data-brand="kiri">
+                    <div class="card-header">
+                        <div class="brand-logo">KE</div>
+                        <h3 class="card-title">Kiri Engine</h3>
+                        <span class="card-indicator">Click to view</span>
+                    </div>
+                    <div class="card-content">
+                        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C8U5QvmOVLM/" data-instgrm-version="14">
+                            <a href="https://www.instagram.com/reel/C8U5QvmOVLM/">View on Instagram</a>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cta-section reveal">
+                <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener" class="link-button">Click here to see more</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <p class="footer-location">Brooklyn, New York</p>
-          <div class="footer-social">
-            <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener">@mv.nyc</a>
-          </div>
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-location">Brooklyn, New York</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener">@mv.nyc</a>
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
-  </main>
 
-  <script src="particles.js"></script>
-  <script async src="//www.instagram.com/embed.js"></script>
-  <script>
-    const navToggle = document.getElementById('nav-toggle');
-    const navLinks = document.getElementById('nav-links');
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    // Expandable cards functionality
-    document.querySelectorAll('.expandable-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const isExpanded = card.classList.contains('expanded');
-        
-        // Close all other cards
-        document.querySelectorAll('.expandable-card').forEach(c => {
-          c.classList.remove('expanded');
-        });
-        
-        // Toggle current card
-        if (!isExpanded) {
-          card.classList.add('expanded');
-          // Reprocess Instagram embeds
-          if (window.instgrm) {
-            window.instgrm.Embeds.process();
-          }
-        }
-      });
-    });
-  </script>
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
+    <script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>

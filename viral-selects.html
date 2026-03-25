@@ -1,89 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Media Viral Selects — Massimo Vendola</title>
-  <meta name="description" content="I create content that drives results. With a strong grasp of trends and platform strategy, I help brands boost engagement and consistently hit key performance goals.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Viral Selects — Massimo Vendola</title>
+    <meta name="description" content="I create content that drives results. With a strong grasp of trends and platform strategy, I help brands boost engagement and consistently hit key performance goals.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <canvas id="particles-canvas"></canvas>
-  
-  <nav class="nav">
-    <div class="nav-content">
-      <a href="index.html" class="nav-logo">MV</a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="documentaries.html">Documentaries</a></li>
-        <li><a href="digital-art.html">Digital Art</a></li>
-        <li><a href="branded-content.html">Branded Content</a></li>
-        <li><a href="viral-selects.html" class="active">Viral Selects</a></li>
-        <li><a href="exhibited-work.html">Exhibited Work</a></li>
-      </ul>
-      <div class="nav-toggle" id="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </nav>
+    <!-- Particle Canvas Background -->
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
 
-  <main class="main">
-    <header class="page-header">
-      <div class="container">
-        <h1 class="page-title">Social Media Viral Selects</h1>
-        <p class="page-description">I create content that drives results. With a strong grasp of trends and platform strategy, I help brands boost engagement and consistently hit key performance goals.</p>
-      </div>
-    </header>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">MV</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="documentaries.html" class="nav-link">Documentaries</a></li>
+                <li><a href="digital-art.html" class="nav-link">Digital Art</a></li>
+                <li><a href="viral-selects.html" class="nav-link active">Viral Selects</a></li>
+                <li><a href="exhibited-work.html" class="nav-link">Exhibited Work</a></li>
+                <li><a href="branded-content.html" class="nav-link">Branded Content</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <section class="container">
-      <div class="viral-grid">
-        <div class="viral-item">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CuAjg_wukkA/" data-instgrm-version="14">
-            <a href="https://www.instagram.com/reel/CuAjg_wukkA/">View on Instagram</a>
-          </blockquote>
-        </div>
-        <div class="viral-item">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CjEr1EWDgCV/" data-instgrm-version="14">
-            <a href="https://www.instagram.com/reel/CjEr1EWDgCV/">View on Instagram</a>
-          </blockquote>
-        </div>
-        <div class="viral-item">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CunsorONEy9/" data-instgrm-version="14">
-            <a href="https://www.instagram.com/reel/CunsorONEy9/">View on Instagram</a>
-          </blockquote>
-        </div>
-      </div>
-      
-      <div class="cta-section">
-        <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener" class="link-button">Click here to see more</a>
-      </div>
-    </section>
+    <main>
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="container">
+                <h1 class="page-title reveal">Social Media Viral Selects</h1>
+                <p class="page-description reveal">I create content that drives results. With a strong grasp of trends and platform strategy, I help brands boost engagement and consistently hit key performance goals.</p>
+            </div>
+        </header>
 
+        <!-- Instagram Grid -->
+        <section class="container">
+            <div class="viral-grid">
+                <div class="viral-item reveal">
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CuAjg_wukkA/" data-instgrm-version="14">
+                        <a href="https://www.instagram.com/reel/CuAjg_wukkA/">View on Instagram</a>
+                    </blockquote>
+                </div>
+                <div class="viral-item reveal">
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CjEr1EWDgCV/" data-instgrm-version="14">
+                        <a href="https://www.instagram.com/reel/CjEr1EWDgCV/">View on Instagram</a>
+                    </blockquote>
+                </div>
+                <div class="viral-item reveal">
+                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CunsorONEy9/" data-instgrm-version="14">
+                        <a href="https://www.instagram.com/reel/CunsorONEy9/">View on Instagram</a>
+                    </blockquote>
+                </div>
+            </div>
+            
+            <div class="cta-section reveal">
+                <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener" class="link-button">Click here to see more</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <p class="footer-location">Brooklyn, New York</p>
-          <div class="footer-social">
-            <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener">@mv.nyc</a>
-          </div>
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-location">Brooklyn, New York</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener">@mv.nyc</a>
+                </div>
+            </div>
         </div>
-      </div>
     </footer>
-  </main>
 
-  <script src="particles.js"></script>
-  <script async src="//www.instagram.com/embed.js"></script>
-  <script>
-    const navToggle = document.getElementById('nav-toggle');
-    const navLinks = document.getElementById('nav-links');
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
+    <script async src="//www.instagram.com/embed.js"></script>
 </body>
 </html>

@@ -43,24 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const headerOffset = 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
     // ============================================
     // SCROLL REVEAL
     // ============================================
@@ -70,8 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                // Optionally unobserve after reveal
-                // revealObserver.unobserve(entry.target);
             }
         });
     }, {
@@ -84,18 +64,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ============================================
-    // PROJECT CARD INTERACTIONS
+    // EXPANDABLE CARDS (Branded Content Page)
     // ============================================
-    const projectCards = document.querySelectorAll('.project-card');
+    const expandableCards = document.querySelectorAll('.expandable-card');
 
-    projectCards.forEach(card => {
+    expandableCards.forEach(card => {
         card.addEventListener('click', function() {
-            // Could open a modal or navigate to case study
-            // For now, just a subtle feedback
-            this.style.transform = 'scale(0.98)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
+            const isExpanded = this.classList.contains('expanded');
+            
+            // Close all other cards
+            expandableCards.forEach(c => {
+                c.classList.remove('expanded');
+            });
+            
+            // Toggle current card
+            if (!isExpanded) {
+                this.classList.add('expanded');
+                // Reprocess Instagram embeds
+                if (window.instgrm) {
+                    window.instgrm.Embeds.process();
+                }
+            }
         });
     });
 
@@ -115,32 +104,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, { passive: true });
     }
-
-    // ============================================
-    // ACTIVE NAV LINK HIGHLIGHTING
-    // ============================================
-    const sections = document.querySelectorAll('section[id]');
-
-    function highlightActiveLink() {
-        const scrollPos = window.scrollY + 150;
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === '#' + sectionId) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
-    }
-
-    window.addEventListener('scroll', highlightActiveLink, { passive: true });
 
     // ============================================
     // MAGNETIC BUTTON EFFECT
@@ -164,75 +127,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================
-    // PERFORMANCE: Pause animations when tab hidden
-    // ============================================
-    let ticking = false;
-
-    function requestTick(callback) {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                callback();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }
-
-    // ============================================
-    // COMING SOON TOAST (for project clicks)
-    // ============================================
-    function showToast(message) {
-        const existingToast = document.querySelector('.toast');
-        if (existingToast) existingToast.remove();
-
-        const toast = document.createElement('div');
-        toast.className = 'toast';
-        toast.textContent = message;
-        toast.style.cssText = `
-            position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: var(--bg-card);
-            color: var(--text-primary);
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            font-size: 0.9rem;
-            z-index: 9999;
-            opacity: 0;
-            transition: all 0.3s ease;
-        `;
-
-        document.body.appendChild(toast);
-
-        // Animate in
-        requestAnimationFrame(() => {
-            toast.style.opacity = '1';
-            toast.style.transform = 'translateX(-50%) translateY(0)';
-        });
-
-        // Remove after delay
-        setTimeout(() => {
-            toast.style.opacity = '0';
-            toast.style.transform = 'translateX(-50%) translateY(100px)';
-            setTimeout(() => toast.remove(), 300);
-        }, 2500);
-    }
-
-    // Add click handler for project cards
-    projectCards.forEach(card => {
-        card.addEventListener('click', () => {
-            showToast('Case study coming soon');
-        });
-    });
-
-    // ============================================
     // INITIALIZE
     // ============================================
     // Trigger initial scroll handler
     handleNavbarScroll();
-    highlightActiveLink();
 
     console.log('🎨 Massimo Vendola Portfolio loaded');
 });

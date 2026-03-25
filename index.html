@@ -12,36 +12,43 @@
     <title>Massimo Vendola - Creative Technologist & 3D Artist</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#" class="nav-logo">MV</a>
+            <a href="index.html" class="nav-logo">MV</a>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#work" class="nav-link">Work</a></li>
-                <li><a href="#clients" class="nav-link">Clients</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="documentaries.html" class="nav-link">Documentaries</a></li>
+                <li><a href="digital-art.html" class="nav-link">Digital Art</a></li>
+                <li><a href="viral-selects.html" class="nav-link">Viral Selects</a></li>
+                <li><a href="exhibited-work.html" class="nav-link">Exhibited Work</a></li>
+                <li><a href="branded-content.html" class="nav-link">Branded Content</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <canvas id="particleCanvas" class="particle-canvas"></canvas>
+    <section class="hero" id="home">
         <div class="hero-content">
-            <h1 class="hero-title">Creative Technologist<br>& 3D Artist</h1>
-            <p class="hero-subtitle">Transforming real-world environments into immersive digital experiences through point cloud art, branded content, and creative direction.</p>
-            <div class="hero-ctas">
-                <a href="#work" class="btn btn-primary">View Work</a>
-                <a href="#contact" class="btn btn-secondary">Work With Me</a>
+            <h1 class="hero-title reveal">Transforming Spaces with 3D Art, Content & Strategy.</h1>
+            <p class="hero-subtitle reveal">I turn environments into immersive digital experiences through point cloud art, branded content, and creative direction.</p>
+            <div class="hero-bio reveal">
+                <p>I'm a Brooklyn-based Creative Technologist and 3D Artist specializing in point cloud visualization, 3D scanning, and creative technology. My work bridges the gap between physical spaces and digital experiences—creating immersive content that resonates with millions.</p>
+                <p>From ARTECHOUSE documentaries to viral brand campaigns, I've helped companies like NASA, Polycam, SmallRig, and Intel tell their stories through cutting-edge visual experiences.</p>
+            </div>
+            <div class="hero-ctas reveal">
+                <a href="documentaries.html" class="btn btn-primary">View Documentaries</a>
+                <a href="digital-art.html" class="btn btn-secondary">Digital Art</a>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -50,222 +57,37 @@
         </div>
     </section>
 
-    <!-- Featured Work Section -->
-    <section class="section section-work" id="work">
-        <div class="container">
-            <h2 class="section-title reveal">Selected Work</h2>
-            <div class="work-grid">
-                <!-- Project 1: ARTECHOUSE -->
-                <article class="project-card reveal">
-                    <div class="project-thumbnail">
-                        <div class="project-placeholder" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);">
-                            <span class="project-initials">AR</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">ARTECHOUSE Documentaries</h3>
-                        <p class="project-category">Documentary / Creative Direction</p>
-                        <p class="project-client">Client: ARTECHOUSE</p>
-                        <span class="project-outcome">50+ films for immersive art experiences</span>
-                    </div>
-                </article>
-
-                <!-- Project 2: Polycam -->
-                <article class="project-card reveal">
-                    <div class="project-thumbnail">
-                        <div class="project-placeholder" style="background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);">
-                            <span class="project-initials">PO</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Polycam Brand Campaign</h3>
-                        <p class="project-category">Branded Content / 3D Scanning</p>
-                        <p class="project-client">Client: Polycam</p>
-                        <span class="project-outcome">2M+ organic views</span>
-                    </div>
-                </article>
-
-                <!-- Project 3: SmallRig -->
-                <article class="project-card reveal">
-                    <div class="project-thumbnail">
-                        <div class="project-placeholder" style="background: linear-gradient(135deg, #2d132c 0%, #1a1a2e 100%);">
-                            <span class="project-initials">SR</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">SmallRig Global Campaign</h3>
-                        <p class="project-category">Branded Content</p>
-                        <p class="project-client">Client: SmallRig</p>
-                        <span class="project-outcome">Viral content series</span>
-                    </div>
-                </article>
-
-                <!-- Project 4: NASA -->
-                <article class="project-card reveal">
-                    <div class="project-thumbnail">
-                        <div class="project-placeholder" style="background: linear-gradient(135deg, #1e3a5f 0%, #0f3460 100%);">
-                            <span class="project-initials">NA</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">NASA Visual Content</h3>
-                        <p class="project-category">Creative Direction</p>
-                        <p class="project-client">Client: NASA</p>
-                        <span class="project-outcome">Educational content that engages</span>
-                    </div>
-                </article>
-
-                <!-- Project 5: Point Cloud Art -->
-                <article class="project-card reveal">
-                    <div class="project-thumbnail">
-                        <div class="project-placeholder" style="background: linear-gradient(135deg, #4A7C59 0%, #2d5a3d 100%);">
-                            <span class="project-initials">PC</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Point Cloud Art Series</h3>
-                        <p class="project-category">Digital Art / VFX</p>
-                        <p class="project-client">Client: Personal</p>
-                        <span class="project-outcome">Exhibited in 4 cities</span>
-                    </div>
-                </article>
-
-                <!-- Project 6: Marshmello -->
-                <article class="project-card reveal">
-                    <div class="project-thumbnail">
-                        <div class="project-placeholder" style="background: linear-gradient(135deg, #3d2c2e 0%, #2d132c 100%);">
-                            <span class="project-initials">MM</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Marshmello / Human Person</h3>
-                        <p class="project-category">Creative Direction</p>
-                        <p class="project-client">Client: Marshmello</p>
-                        <span class="project-outcome">Festival visuals</span>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
     <!-- Clients Section -->
-    <section class="section section-clients" id="clients">
+    <section class="clients-section" id="clients">
         <div class="container">
-            <h2 class="section-title reveal">Trusted By</h2>
-            <div class="clients-grid">
-                <div class="client-logo reveal"><span class="logo-text">ARTECHOUSE</span></div>
-                <div class="client-logo reveal"><span class="logo-text">Polycam</span></div>
-                <div class="client-logo reveal"><span class="logo-text">NASA</span></div>
-                <div class="client-logo reveal"><span class="logo-text">SmallRig</span></div>
-                <div class="client-logo reveal"><span class="logo-text">Kiri Engine</span></div>
-                <div class="client-logo reveal"><span class="logo-text">Intel</span></div>
-                <div class="client-logo reveal"><span class="logo-text">Future Classic</span></div>
-                <div class="client-logo reveal"><span class="logo-text">Motion Array</span></div>
-                <div class="client-logo reveal"><span class="logo-text">Kwik Learning</span></div>
-                <div class="client-logo reveal"><span class="logo-text">Looking Glass</span></div>
-                <div class="client-logo reveal"><span class="logo-text">Human Person</span></div>
-                <div class="client-logo reveal"><span class="logo-text">Nohlab</span></div>
-                <div class="client-logo reveal"><span class="logo-text">JALC</span></div>
-                <div class="client-logo reveal"><span class="logo-text">BnA Hotels</span></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section section-about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-quote reveal">
-                    <blockquote>"Bridging the gap between physical spaces and digital experiences."</blockquote>
-                </div>
-                <div class="about-bio reveal">
-                    <p>I specialize in point cloud visualization, 3D scanning, and creative technology. My work bridges the gap between physical spaces and digital experiences—creating immersive content that resonates with millions.</p>
-                    <p>Based in Brooklyn, working globally with brands, artists, and cultural institutions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="section section-services" id="services">
-        <div class="container">
-            <h2 class="section-title reveal">Services</h2>
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Branded Content</h3>
-                    <p class="service-description">Strategic content that drives engagement and measurable results across social platforms.</p>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Digital Art & Point Clouds</h3>
-                    <p class="service-description">Transforming real-world scans into living data sculptures and immersive visual experiences.</p>
-                </div>
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-title">Documentary & Creative Direction</h3>
-                    <p class="service-description">Cinematic storytelling for brands, artists, and cultural institutions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results Section -->
-    <section class="section section-results" id="results">
-        <div class="container">
-            <div class="results-grid">
-                <div class="result-item reveal">
-                    <span class="result-number">50M+</span>
-                    <span class="result-label">Total Content Views</span>
-                </div>
-                <div class="result-item reveal">
-                    <span class="result-number">200+</span>
-                    <span class="result-label">Brand Collaborations</span>
-                </div>
-                <div class="result-item reveal">
-                    <span class="result-number">4</span>
-                    <span class="result-label">Countries Exhibited</span>
-                </div>
-                <div class="result-item reveal">
-                    <span class="result-number">50+</span>
-                    <span class="result-label">Films Produced</span>
-                </div>
+            <h2 class="clients-title reveal">Worked with</h2>
+            <div class="clients-grid reveal">
+                <span class="client-logo">ARTECHOUSE</span>
+                <span class="client-logo">NASA</span>
+                <span class="client-logo">Polycam</span>
+                <span class="client-logo">SmallRig</span>
+                <span class="client-logo">Kiri Engine</span>
+                <span class="client-logo">Intel</span>
+                <span class="client-logo">Future Classic</span>
+                <span class="client-logo">Motion Array</span>
+                <span class="client-logo">Kwik Learning</span>
+                <span class="client-logo">Looking Glass</span>
+                <span class="client-logo">Human Person</span>
+                <span class="client-logo">Nohlab</span>
+                <span class="client-logo">JALC</span>
+                <span class="client-logo">BnA Hotels</span>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="section section-contact" id="contact">
+    <section class="contact-section" id="contact">
         <div class="container">
-            <div class="contact-content reveal">
-                <h2 class="contact-title">Let's Create Something Together</h2>
-                <p class="contact-subtitle">Open for collaborations, commissions, and creative partnerships.</p>
-                <div class="contact-details">
-                    <a href="mailto:hello@massimovendola.com" class="contact-link">
-                        <span class="contact-label">Email</span>
-                        <span class="contact-value">hello@massimovendola.com</span>
-                    </a>
-                    <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener" class="contact-link">
-                        <span class="contact-label">Instagram</span>
-                        <span class="contact-value">@mv.nyc</span>
-                    </a>
-                    <div class="contact-location">
-                        <span class="contact-label">Location</span>
-                        <span class="contact-value">Brooklyn, New York</span>
-                    </div>
-                </div>
+            <div class="contact-info reveal">
+                <p class="contact-location">Brooklyn, New York</p>
+                <p class="contact-social">
+                    <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener">@mv.nyc</a>
+                </p>
             </div>
         </div>
     </section>

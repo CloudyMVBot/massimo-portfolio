@@ -1,70 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exhibited Work — Massimo Vendola</title>
-  <meta name="description" content="My digital work has been exhibited in cities like Miami, Amsterdam, Tokyo, and Wroclaw.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibited Work — Massimo Vendola</title>
+    <meta name="description" content="My digital work has been exhibited in cities like Miami, Amsterdam, Tokyo, and Wroclaw.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <canvas id="particles-canvas"></canvas>
-  
-  <nav class="nav">
-    <div class="nav-content">
-      <a href="index.html" class="nav-logo">MV</a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="documentaries.html">Documentaries</a></li>
-        <li><a href="digital-art.html">Digital Art</a></li>
-        <li><a href="branded-content.html">Branded Content</a></li>
-        <li><a href="viral-selects.html">Viral Selects</a></li>
-        <li><a href="exhibited-work.html" class="active">Exhibited Work</a></li>
-      </ul>
-      <div class="nav-toggle" id="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </nav>
+    <!-- Particle Canvas Background -->
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
 
-  <main class="main">
-    <header class="page-header">
-      <div class="container">
-        <h1 class="page-title">Exhibited Work</h1>
-      </div>
-    </header>
-
-    <section class="container">
-      <div class="exhibited-content">
-        <p class="exhibited-text">My digital work has been exhibited in cities like Miami, Amsterdam, Tokyo, and Wroclaw. From music festivals to immersive screens, I turn real-world data into motion-driven art that connects across cultures.</p>
-        <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener" class="link-button">Click here for more info</a>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <p class="footer-location">Brooklyn, New York</p>
-          <div class="footer-social">
-            <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener">@mv.nyc</a>
-          </div>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">MV</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="documentaries.html" class="nav-link">Documentaries</a></li>
+                <li><a href="digital-art.html" class="nav-link">Digital Art</a></li>
+                <li><a href="viral-selects.html" class="nav-link">Viral Selects</a></li>
+                <li><a href="exhibited-work.html" class="nav-link active">Exhibited Work</a></li>
+                <li><a href="branded-content.html" class="nav-link">Branded Content</a></li>
+            </ul>
         </div>
-      </div>
-    </footer>
-  </main>
+    </nav>
 
-  <script src="particles.js"></script>
-  <script>
-    const navToggle = document.getElementById('nav-toggle');
-    const navLinks = document.getElementById('nav-links');
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-  </script>
+    <main>
+        <!-- Page Header -->
+        <header class="page-header">
+            <div class="container">
+                <h1 class="page-title reveal">Exhibited Work</h1>
+            </div>
+        </header>
+
+        <!-- Exhibited Content -->
+        <section class="container">
+            <div class="exhibited-content reveal">
+                <p class="exhibited-text">My digital work has been exhibited in cities like Miami, Amsterdam, Tokyo, and Wroclaw. From music festivals to immersive screens, I turn real-world data into motion-driven art that connects across cultures.</p>
+                <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener" class="link-button">Click here for more info</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-location">Brooklyn, New York</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener">@mv.nyc</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="particles.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

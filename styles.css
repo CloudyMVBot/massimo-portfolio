@@ -524,6 +524,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .reel-slide {
     min-width: calc(33.333% - 1rem);
     flex-shrink: 0;
+    padding: 0;  /* Ensure no extra padding */
+}
+
+.instagram-wrapper {
+    width: 100%;
+    max-width: 100%;
 }
 
 .reel-slide .instagram-wrapper {
@@ -622,6 +628,64 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     width: 100%;
     height: 100%;
     border: none;
+}
+
+/* ============================================
+   METRICS SECTION
+   ============================================ */
+.metrics-section {
+    padding: var(--space-2xl) 0 var(--space-lg);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.metrics-grid {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-lg);
+}
+
+.metric-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.metric-number {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--accent);
+    line-height: 1;
+}
+
+.metric-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.metrics-copy {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .metrics-grid {
+        gap: var(--space-lg);
+    }
+    
+    .metric-item {
+        min-width: 120px;
+    }
 }
 
 /* ============================================

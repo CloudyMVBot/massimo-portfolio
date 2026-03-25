@@ -120,27 +120,61 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!track || slides.length === 0) return;
         
         let currentIndex = 0;
-        const slidesPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
-        const maxIndex = Math.max(0, slides.length - slidesPerView);
+        let slidesPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
+        let maxIndex = Math.max(0, slides.length - slidesPerView);
         
-        function updateCarousel() {
-            const slideWidth = slides[0].offsetWidth + 24; // including gap
-            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        function getSlideWidth() {
+            // Calculate slide width including gap
+            const slideStyle = window.getComputedStyle(slides[0]);
+            const slideWidth = slides[0].offsetWidth;
+            const gap = parseInt(window.getComputedStyle(track).gap) || 24;
+            return slideWidth + gap;
         }
         
+        function updateCarousel() {
+            const slideWidth = getSlideWidth();
+            const translateX = currentIndex * slideWidth;
+            track.style.transform = `translateX(-${translateX}px)`;
+        }
+        
+        function updateSlidesPerView() {
+            slidesPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
+            maxIndex = Math.max(0, slides.length - slidesPerView);
+            // Ensure current index is still valid
+            if (currentIndex > maxIndex) {
+                currentIndex = maxIndex;
+            }
+            updateCarousel();
+        }
+        
+        // Add click event listeners with proper handling
         if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                currentIndex = Math.max(0, currentIndex - 1);
-                updateCarousel();
+            prevBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
             });
         }
         
         if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                currentIndex = Math.min(maxIndex, currentIndex + 1);
-                updateCarousel();
+            nextBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateCarousel();
+                }
             });
         }
+        
+        // Update on window resize
+        window.addEventListener('resize', function() {
+            updateSlidesPerView();
+        }, { passive: true });
+        
+        // Initialize carousel
+        updateSlidesPerView();
         
         // Re-process Instagram embeds when slide changes
         if (window.instgrm) {

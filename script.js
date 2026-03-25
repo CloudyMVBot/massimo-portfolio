@@ -76,13 +76,28 @@ document.addEventListener('DOMContentLoaded', function() {
         
         let currentIndex = 0;
         
+        // Force iframe resize after load
+        function resizeIframes() {
+            const iframes = carousel.querySelectorAll('iframe');
+            iframes.forEach(iframe => {
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+            });
+        }
+        
         function updateCarousel() {
             track.style.transform = `translateX(-${currentIndex * 100}%)`;
             
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentIndex);
             });
+            
+            // Resize iframes after transition
+            setTimeout(resizeIframes, 100);
         }
+        
+        // Initial resize
+        setTimeout(resizeIframes, 500);
         
         if (prevBtn) {
             prevBtn.addEventListener('click', () => {

@@ -618,6 +618,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     border-radius: 12px;
     background: var(--bg-card);
     width: 100%;
+    position: relative;
+}
+
+.carousel-container[data-carousel="video"] .carousel {
+    aspect-ratio: 16 / 9;
 }
 
 .carousel-track {

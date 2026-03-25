@@ -94,11 +94,23 @@
             this.baseX += this.vx + Math.sin(this.phase) * 0.2;
             this.baseY += this.vy + Math.cos(this.phase * 0.7) * 0.2;
 
-            // Wrap around edges for base position
-            if (this.baseX < 0) this.baseX = width;
-            if (this.baseX > width) this.baseX = 0;
-            if (this.baseY < 0) this.baseY = height;
-            if (this.baseY > height) this.baseY = 0;
+            // Wrap around edges for base position (also update current position to prevent flying)
+            if (this.baseX < 0) {
+                this.baseX = width;
+                this.x = width;
+            }
+            if (this.baseX > width) {
+                this.baseX = 0;
+                this.x = 0;
+            }
+            if (this.baseY < 0) {
+                this.baseY = height;
+                this.y = height;
+            }
+            if (this.baseY > height) {
+                this.baseY = 0;
+                this.y = 0;
+            }
 
             // Mouse interaction - gentle repulsion
             if (mouse.isActive && mouse.x !== null && mouse.y !== null) {

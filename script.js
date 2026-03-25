@@ -1,6 +1,6 @@
 /**
- * Main JavaScript for Massimo Vendola Portfolio
- * Handles navigation, scroll reveal, and interactions
+ * Massimo Vendola Portfolio
+ * JavaScript for interactions, carousels, and animations
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Navbar scroll effect
     function handleNavbarScroll() {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -25,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', handleNavbarScroll, { passive: true });
 
-    // Mobile menu toggle
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
             navToggle.classList.toggle('active');
@@ -33,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
         });
 
-        // Close menu when clicking a link
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
                 navToggle.classList.remove('active');
@@ -64,28 +61,91 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // ============================================
-    // EXPANDABLE CARDS (Branded Content Page)
+    // VIDEO CAROUSEL (Documentaries)
     // ============================================
-    const expandableCards = document.querySelectorAll('.expandable-card');
-
-    expandableCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const isExpanded = this.classList.contains('expanded');
+    const videoCarousels = document.querySelectorAll('.carousel-container[data-carousel="video"]');
+    
+    videoCarousels.forEach(carousel => {
+        const track = carousel.querySelector('.carousel-track');
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        const prevBtn = carousel.querySelector('.carousel-btn.prev');
+        const nextBtn = carousel.querySelector('.carousel-btn.next');
+        const dots = carousel.querySelectorAll('.carousel-dot');
+        
+        if (!track || slides.length === 0) return;
+        
+        let currentIndex = 0;
+        
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
             
-            // Close all other cards
-            expandableCards.forEach(c => {
-                c.classList.remove('expanded');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
             });
-            
-            // Toggle current card
-            if (!isExpanded) {
-                this.classList.add('expanded');
-                // Reprocess Instagram embeds
-                if (window.instgrm) {
-                    window.instgrm.Embeds.process();
-                }
-            }
+        }
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateCarousel();
+            });
+        }
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateCarousel();
+            });
+        }
+        
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel();
+            });
         });
+    });
+
+    // ============================================
+    // REELS CAROUSEL
+    // ============================================
+    const reelsCarousels = document.querySelectorAll('.reels-carousel-container');
+    
+    reelsCarousels.forEach(carousel => {
+        const track = carousel.querySelector('.reels-track');
+        const slides = carousel.querySelectorAll('.reel-slide');
+        const prevBtn = carousel.querySelector('.reels-carousel-btn.prev');
+        const nextBtn = carousel.querySelector('.reels-carousel-btn.next');
+        
+        if (!track || slides.length === 0) return;
+        
+        let currentIndex = 0;
+        const slidesPerView = window.innerWidth <= 768 ? 1 : (window.innerWidth <= 1024 ? 2 : 3);
+        const maxIndex = Math.max(0, slides.length - slidesPerView);
+        
+        function updateCarousel() {
+            const slideWidth = slides[0].offsetWidth + 24; // including gap
+            track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentIndex = Math.max(0, currentIndex - 1);
+                updateCarousel();
+            });
+        }
+        
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentIndex = Math.min(maxIndex, currentIndex + 1);
+                updateCarousel();
+            });
+        }
+        
+        // Re-process Instagram embeds when slide changes
+        if (window.instgrm) {
+            window.instgrm.Embeds.process();
+        }
     });
 
     // ============================================
@@ -127,9 +187,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================
+    // INITIALIZE INSTAGRAM EMBEDS
+    // ============================================
+    if (window.instgrm) {
+        window.instgrm.Embeds.process();
+    }
+
+    // ============================================
     // INITIALIZE
     // ============================================
-    // Trigger initial scroll handler
     handleNavbarScroll();
 
     console.log('🎨 Massimo Vendola Portfolio loaded');

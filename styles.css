@@ -118,6 +118,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .nav-logo:hover { color: var(--accent); }
 .nav-logo:hover .nav-logo-text { background: var(--accent); }
 
+.nav-logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;

@@ -241,8 +241,8 @@ document.addEventListener('DOMContentLoaded', function() {
         marqueeTrack.style.animation = 'none';
         
         function animate() {
-            const speed = isHovering ? 0.33 : 1; // 1/3 speed on hover
-            currentX -= 0.5 * speed; // pixels per frame
+            const speed = isHovering ? 0.5 : 1.5; // faster normal, faster hover too
+            currentX -= 1 * speed; // pixels per frame
             
             // Loop back when reaching halfway (duplicated content)
             if (Math.abs(currentX) >= trackWidth) {

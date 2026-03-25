@@ -288,13 +288,12 @@
 
     document.addEventListener('visibilitychange', handleVisibility);
     
-    // Mouse interaction events
-    canvas.addEventListener('mousemove', handleMouseMove, { passive: true });
-    canvas.addEventListener('mouseleave', handleMouseLeave, { passive: true });
-    canvas.addEventListener('mouseenter', handleMouseEnter, { passive: true });
+    // Mouse interaction events - document level for whole page
+    document.addEventListener('mousemove', handleMouseMove, { passive: true });
+    document.addEventListener('mouseleave', handleMouseLeave, { passive: true });
     
     // Touch support for mobile
-    canvas.addEventListener('touchmove', (e) => {
+    document.addEventListener('touchmove', (e) => {
         if (e.touches.length > 0) {
             mouse.x = e.touches[0].clientX;
             mouse.y = e.touches[0].clientY;
@@ -302,7 +301,7 @@
         }
     }, { passive: true });
     
-    canvas.addEventListener('touchend', handleMouseLeave, { passive: true });
+    document.addEventListener('touchend', handleMouseLeave, { passive: true });
 
     // Cleanup on page unload
     window.addEventListener('beforeunload', () => {

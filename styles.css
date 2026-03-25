@@ -367,6 +367,102 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+/* Clients Marquee */
+.clients-marquee {
+    overflow: hidden;
+    width: 100%;
+    padding: var(--space-lg) 0;
+    position: relative;
+}
+
+.clients-marquee::before,
+.clients-marquee::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.clients-marquee::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-primary), transparent);
+}
+
+.clients-marquee::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-primary), transparent);
+}
+
+.marquee-track {
+    display: flex;
+    gap: var(--space-xl);
+    animation: marquee 30s linear infinite;
+    width: fit-content;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee-item {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    min-width: 140px;
+    transition: var(--transition-base);
+    cursor: pointer;
+}
+
+.marquee-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.marquee-logo {
+    width: 80px;
+    height: 60px;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: var(--transition-base);
+}
+
+.marquee-item:hover .marquee-logo {
+    opacity: 1;
+}
+
+.marquee-name {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: var(--transition-base);
+}
+
+.marquee-item:hover .marquee-name {
+    opacity: 1;
+    transform: translateY(0);
+    color: var(--accent);
     gap: var(--space-md);
     max-width: 1000px;
     margin: 0 auto;

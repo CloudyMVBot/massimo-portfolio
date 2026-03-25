@@ -17,7 +17,7 @@
         connectionDistance: 150,
         maxConnections: 3,
         particleSpeed: 0.4,
-        particleSize: { min: 1.5, max: 3.5 },
+        particleSize: { min: 3, max: 7 },
         opacity: { min: 0.3, max: 0.8 },
         mouseInteractionDistance: 200,
         mouseRepelForce: 0.8,
@@ -130,14 +130,14 @@
         draw() {
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            // Brighter particles for visibility on dark background
-            ctx.fillStyle = `rgba(100, 160, 120, ${this.opacity})`;
+            // Grayscale particles for visibility on dark background
+            ctx.fillStyle = `rgba(200, 200, 200, ${this.opacity})`;
             ctx.fill();
             
             // Subtle glow effect
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size * 2, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(100, 160, 120, ${this.opacity * 0.2})`;
+            ctx.fillStyle = `rgba(200, 200, 200, ${this.opacity * 0.2})`;
             ctx.fill();
         }
     }
@@ -168,8 +168,8 @@
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
                     ctx.lineTo(particles[j].x, particles[j].y);
-                    // Brighter connection lines
-                    ctx.strokeStyle = `rgba(100, 160, 120, ${opacity})`;
+                    // Grayscale connection lines
+                    ctx.strokeStyle = `rgba(200, 200, 200, ${opacity})`;
                     ctx.lineWidth = 0.8;
                     ctx.stroke();
                     
@@ -195,7 +195,7 @@
                 ctx.beginPath();
                 ctx.moveTo(particle.x, particle.y);
                 ctx.lineTo(mouse.x, mouse.y);
-                ctx.strokeStyle = `rgba(200, 180, 140, ${opacity})`;
+                ctx.strokeStyle = `rgba(220, 220, 220, ${opacity})`;
                 ctx.lineWidth = 0.5;
                 ctx.stroke();
             }

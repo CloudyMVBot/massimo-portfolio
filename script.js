@@ -228,6 +228,45 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================
+    // SMOOTH MARQUEE SPEED CONTROL
+    // ============================================
+    const marqueeTrack = document.querySelector('.marquee-track');
+    if (marqueeTrack) {
+        let currentX = 0;
+        let isHovering = false;
+        let animationId = null;
+        const trackWidth = marqueeTrack.scrollWidth / 2;
+        
+        // Cancel CSS animation and use JS animation
+        marqueeTrack.style.animation = 'none';
+        
+        function animate() {
+            const speed = isHovering ? 0.33 : 1; // 1/3 speed on hover
+            currentX -= 0.5 * speed; // pixels per frame
+            
+            // Loop back when reaching halfway (duplicated content)
+            if (Math.abs(currentX) >= trackWidth) {
+                currentX = 0;
+            }
+            
+            marqueeTrack.style.transform = `translateX(${currentX}px)`;
+            animationId = requestAnimationFrame(animate);
+        }
+        
+        // Start animation
+        animate();
+        
+        // Handle hover
+        marqueeTrack.addEventListener('mouseenter', () => {
+            isHovering = true;
+        });
+        
+        marqueeTrack.addEventListener('mouseleave', () => {
+            isHovering = false;
+        });
+    }
+
+    // ============================================
     // INITIALIZE
     // ============================================
     handleNavbarScroll();

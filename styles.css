@@ -440,22 +440,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .marquee-track {
     display: flex;
     gap: var(--space-xl);
-    animation: marquee 30s linear infinite;
     width: fit-content;
-}
-
-.marquee-track:hover {
-    animation: marquee-slow 90s linear infinite;
-}
-
-@keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-}
-
-@keyframes marquee-slow {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    will-change: transform;
 }
 
 .marquee-item {

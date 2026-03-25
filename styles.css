@@ -782,6 +782,28 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     width: 100% !important;
 }
 
+/* Brand Image Styles */
+.brand-image-wrapper {
+    background: var(--bg-surface);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-lg);
+    min-height: 300px;
+}
+
+.brand-image {
+    max-width: 100%;
+    max-height: 280px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
 @media (max-width: 768px) {
     .brand-section {
         padding: var(--space-lg);
@@ -798,6 +820,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     
     .brand-embed-wrapper {
         min-height: 250px;
+    }
+    
+    .brand-image-wrapper {
+        min-height: 250px;
+        padding: var(--space-md);
+    }
+    
+    .brand-image {
+        max-height: 220px;
     }
 }
 
@@ -1124,4 +1155,87 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     
     .scroll-indicator { animation: none; }
     .reveal { opacity: 1; transform: none; }
+}
+
+/* ============================================
+   DOCUMENTARY PAGE SPECIFIC STYLES
+   ============================================ */
+
+/* Documentary Header - Centered layout */
+.documentary-header {
+    padding: calc(var(--space-4xl) + 100px) 0 var(--space-2xl);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.documentary-header-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.documentary-header .page-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.documentary-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-align: center;
+    padding: 0 var(--space-md);
+}
+
+/* Documentary Carousel Section */
+.documentary-carousel-section {
+    padding: var(--space-xl) 0 var(--space-3xl);
+    position: relative;
+    z-index: 1;
+}
+
+.documentary-carousel-section .carousel-container {
+    max-width: 1000px;
+    margin: 0 auto var(--space-2xl);
+}
+
+/* Documentary CTA */
+.documentary-cta {
+    text-align: center;
+    padding: var(--space-xl) 0;
+}
+
+/* Responsive adjustments for documentaries */
+@media (max-width: 768px) {
+    .documentary-header {
+        padding: calc(var(--space-3xl) + 80px) 0 var(--space-xl);
+    }
+    
+    .documentary-header .page-title {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    
+    .documentary-subtitle {
+        font-size: clamp(1rem, 4vw, 1.25rem);
+        padding: 0 var(--space-sm);
+    }
+    
+    .documentary-carousel-section {
+        padding: var(--space-lg) 0 var(--space-2xl);
+    }
+    
+    .documentary-cta {
+        padding: var(--space-lg) 0;
+    }
 }

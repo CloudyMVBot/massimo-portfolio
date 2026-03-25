@@ -660,6 +660,36 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     object-fit: cover;
 }
 
+/* Video Grid Layout */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--space-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.video-card .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-card .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 .carousel-btn {
     position: absolute;
     top: 50%;

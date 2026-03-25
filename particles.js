@@ -20,7 +20,7 @@
         particleSize: { min: 3, max: 7 },
         opacity: { min: 0.3, max: 0.8 },
         mouseInteractionDistance: 200,
-        mouseRepelForce: 0.8,
+        mouseRepelForce: 2.5,
         returnToBaseSpeed: 0.02
     };
 

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "frontend-performance-audit": {
+      "version": "1.0.0",
+      "installedAt": 1774468381108
+    },
+    "responsive-design": {
+      "version": "1.0.0",
+      "installedAt": 1774468381202
+    },
+    "html": {
+      "version": "1.0.0",
+      "installedAt": 1774468389963
+    }
+  }
+}

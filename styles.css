@@ -445,10 +445,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .marquee-track:hover {
-    animation-play-state: paused;
+    animation: marquee-slow 90s linear infinite;
 }
 
 @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-slow {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }

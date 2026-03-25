@@ -389,7 +389,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     text-align: center;
     position: relative;
     z-index: 2;
-    background: var(--bg-primary);
 }
 
 .clients-title {
@@ -533,7 +532,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .about-section {
     padding: var(--space-4xl) 0;
     text-align: center;
-    background: var(--bg-primary);
     position: relative;
     z-index: 2;
 }

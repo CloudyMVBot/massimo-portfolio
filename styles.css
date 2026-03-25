@@ -436,6 +436,119 @@ a:hover {
   min-width: 100% !important;
 }
 
+/* Brand Logos */
+.card-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--bg-tertiary);
+  gap: 1rem;
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all var(--transition-medium);
+}
+
+.expandable-card:hover .brand-logo {
+  border-color: var(--border-hover);
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%);
+  transform: scale(1.05);
+}
+
+.brand-logo svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--text-primary);
+}
+
+.nasa-logo svg {
+  width: 22px;
+  height: 22px;
+}
+
+.intel-logo {
+  background: linear-gradient(135deg, #0071c5 0%, #00aeef 100%);
+  border-color: rgba(0, 113, 197, 0.5);
+}
+
+.intel-logo svg text {
+  fill: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+.marshmello-logo {
+  background: linear-gradient(135deg, #fff 0%, #e8e8e8 100%);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.marshmello-logo svg {
+  fill: #141311;
+}
+
+.artechouse-logo svg {
+  width: 22px;
+  height: 22px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  flex: 1;
+}
+
+.card-indicator {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+/* Responsive Brand Logos */
+@media (max-width: 768px) {
+  .brand-logo {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: 0.7rem;
+  }
+  
+  .brand-logo svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .nasa-logo svg,
+  .artechouse-logo svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .card-header {
+    padding: 1.25rem;
+    gap: 0.75rem;
+  }
+}
+
 /* Footer */
 .footer {
   border-top: 1px solid var(--border);

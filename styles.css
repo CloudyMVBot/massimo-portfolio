@@ -250,7 +250,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .hero-title {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: clamp(2.2rem, 7vw, 4.5rem);
+    font-size: clamp(2rem, 6vw, 4rem);
     line-height: 1.2;
     margin-bottom: var(--space-xl);
     letter-spacing: -0.02em;
@@ -260,7 +260,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .hero-subtitle {
     font-size: clamp(1.1rem, 2.2vw, 1.35rem);
-    color: var(--text-secondary);
+    font-weight: 600;
+    color: var(--text-primary);
     max-width: 650px;
     margin: 0 auto var(--space-2xl);
     line-height: 1.6;
@@ -535,6 +536,40 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     height: 20px;
     width: auto;
     max-width: 80px;
+}
+
+/* About Section */
+.about-section {
+    padding: var(--space-4xl) 0;
+    text-align: center;
+    background: var(--bg-primary);
+    position: relative;
+    z-index: 2;
+}
+
+.about-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--text-primary);
+    margin-bottom: var(--space-xl);
+    letter-spacing: -0.02em;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--space-lg);
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
 }
 
 /* Contact Section */

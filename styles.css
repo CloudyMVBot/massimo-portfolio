@@ -546,19 +546,50 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .about-content {
-    max-width: 800px;
+    display: flex;
+    gap: var(--space-xl);
+    align-items: center;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.about-content p {
+.about-text {
+    flex: 1;
+}
+
+.about-text p {
     font-size: clamp(1.1rem, 2vw, 1.25rem);
     color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: var(--space-lg);
 }
 
-.about-content p:last-child {
+.about-text p:last-child {
     margin-bottom: 0;
+}
+
+.about-image {
+    flex: 0 0 300px;
+}
+
+.about-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+    
+    .about-image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 300px;
+    }
 }
 
 /* Contact Section */

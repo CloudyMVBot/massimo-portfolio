@@ -223,8 +223,20 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     justify-content: center;
     align-items: center;
     position: relative;
-    padding: calc(var(--space-3xl) + 60px) var(--container-padding) var(--space-2xl);
+    padding: calc(var(--space-3xl) + 60px) var(--container-padding) var(--space-4xl);
     overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, var(--bg-primary));
+    pointer-events: none;
+    z-index: 1;
 }
 
 .hero-content {
@@ -370,8 +382,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* Clients Section */
 .clients-section {
-    padding: var(--space-3xl) 0;
+    padding: var(--space-4xl) 0;
     text-align: center;
+    position: relative;
+    z-index: 2;
+    background: var(--bg-primary);
 }
 
 .clients-title {

@@ -1126,11 +1126,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .video-preview-card {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
+    background: transparent;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid var(--glass-border);
+    border: none;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1144,7 +1143,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     justify-content: center;
     position: relative;
     overflow: hidden;
-    aspect-ratio: 16/9;
+    aspect-ratio: 9/16;
 }
 
 .video-thumbnail {

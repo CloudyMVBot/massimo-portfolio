@@ -981,21 +981,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     margin-bottom: var(--space-lg);
     display: flex;
     align-items: center;
-    gap: var(--space-md);
+    gap: var(--space-lg);
 }
 
 .brand-logo {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
-    border-radius: 12px;
-    background: var(--bg-surface);
-    padding: var(--space-sm);
+    border-radius: 0;
+    background: transparent;
+    padding: 0;
 }
 
 .brand-logo-placeholder {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1530,7 +1530,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    BRANDED CONTENT STATS HERO
    ============================================ */
 .stats-hero {
-    padding: var(--space-3xl) 0;
+    padding: calc(var(--space-4xl) + 60px) 0 var(--space-3xl);
     text-align: center;
     position: relative;
     z-index: 1;

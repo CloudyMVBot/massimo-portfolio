@@ -6,8 +6,11 @@
 /* CSS Custom Properties */
 :root {
     --bg-primary: #141311;
-    --bg-surface: #1a1a18;
-    --bg-card: #222220;
+    --bg-surface: rgba(26, 26, 24, 0.7);
+    --bg-card: rgba(34, 34, 32, 0.6);
+    --glass-bg: rgba(34, 34, 32, 0.4);
+    --glass-border: rgba(250, 242, 233, 0.08);
+    --glass-blur: blur(20px);
     --text-primary: #faf2e9;
     --text-secondary: #b8b0a8;
     --text-muted: #888480;
@@ -965,8 +968,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .brand-section {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
     border-radius: 16px;
     overflow: hidden;
     transition: var(--transition-base);
@@ -975,6 +980,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .brand-section:hover {
     border-color: var(--border-hover);
+    background: rgba(34, 34, 32, 0.5);
 }
 
 .brand-header {
@@ -1046,10 +1052,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .brand-embed-wrapper {
-    background: var(--bg-surface);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid var(--border);
+    border: 1px solid var(--glass-border);
     min-height: 300px;
     display: block;
 }
@@ -1098,8 +1106,37 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
     position: relative;
+    overflow: hidden;
+    background: var(--bg-surface);
+}
+
+.embed-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.custom-embed:hover .embed-thumb {
+    opacity: 0.6;
+    transform: scale(1.05);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
 }
 
 .play-icon {
@@ -1632,13 +1669,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .stat-card {
-    background: var(--bg-card);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
     border-radius: 16px;
     padding: var(--space-lg) var(--space-md);
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
-    border: 1px solid var(--border);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition-base);
+}
+
+.stat-card:hover {
+    background: rgba(34, 34, 32, 0.5);
+    border-color: var(--border-hover);
 }
 
 .stat-number {

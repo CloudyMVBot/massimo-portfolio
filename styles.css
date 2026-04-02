@@ -1057,13 +1057,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border-radius: 12px;
-    overflow: visible;
+    overflow: hidden;
     border: 1px solid var(--glass-border);
-    min-height: 580px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    padding-top: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .brand-embed-wrapper iframe {
@@ -1081,12 +1081,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .video-preview-card {
     background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--glass-border);
-    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    margin: 0;
 }
 
 .video-preview-bg {
@@ -1096,7 +1097,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     justify-content: center;
     position: relative;
     overflow: hidden;
-    min-height: 380px;
+    aspect-ratio: 16/9;
 }
 
 .video-thumbnail {

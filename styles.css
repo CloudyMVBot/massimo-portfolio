@@ -1070,28 +1070,67 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     margin-top: -50px !important;
 }
 
-/* Video Grid Layout */
-.brand-copy-full {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: var(--space-lg);
+/* Brand Content Row Layout - Text Left, Videos Right */
+.brand-content-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: start;
 }
 
-.video-grid {
+.brand-text-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.brand-text-col .brand-header {
+    margin-bottom: var(--space-sm);
+}
+
+.brand-videos-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.brand-videos-col.single {
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-videos-col.single .instagram-card.vertical {
+    max-width: 280px;
+    aspect-ratio: 9/16;
+}
+
+.videos-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-md);
-    margin-top: var(--space-lg);
 }
 
-.video-grid.single {
-    grid-template-columns: 1fr;
-    max-width: 400px;
+.videos-row.small {
+    grid-template-columns: repeat(2, 1fr);
 }
 
-.video-grid.single .video-card {
-    aspect-ratio: 9/16;
+.brand-videos-col.stacked {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.youtube-card-large {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.youtube-card-large iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 .video-card {
@@ -1116,39 +1155,23 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     border: none;
 }
 
-.video-card.youtube-card {
-    aspect-ratio: 16/9;
-}
-
-.video-card.instagram-card,
-.video-card.facebook-card {
+.video-card.instagram-card {
     text-decoration: none;
     display: block;
 }
 
-.video-thumb {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    overflow: hidden;
-}
-
-.video-thumb img {
+.video-thumb-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.video-card:hover .video-thumb img {
+.video-card:hover .video-thumb-img {
     transform: scale(1.05);
 }
 
-.video-thumb .play-overlay {
+.video-card .play-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -1165,7 +1188,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     background: rgba(0, 0, 0, 0.5);
 }
 
-.video-thumb .play-overlay svg {
+.video-card .play-overlay svg {
     width: 48px;
     height: 48px;
     color: rgba(255, 255, 255, 0.95);
@@ -1194,84 +1217,49 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     backdrop-filter: blur(10px);
 }
 
-.facebook-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-sm);
-    color: var(--text-secondary);
-    text-align: center;
-    padding: var(--space-md);
+.facebook-card {
+    aspect-ratio: 9/16;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
 }
 
-.facebook-icon {
-    width: 40px;
-    height: 40px;
-    color: #1877F2;
-}
-
-.facebook-placeholder span {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-}
-
-/* Kilo AI special layout - video at top, content side by side */
-.kilo-layout {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: var(--space-xl);
-    align-items: start;
-}
-
-.kilo-video-side {
-    order: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: 320px;
-}
-
-.kilo-content-side {
-    order: 2;
-}
-
-.kilo-embed {
-    width: auto;
-    max-height: 500px;
-    margin: 0;
-    padding: 0;
+.facebook-card iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 @media (max-width: 900px) {
-    .kilo-layout {
+    .brand-content-row {
         grid-template-columns: 1fr;
     }
     
-    .kilo-video-side {
-        order: 1;
-        max-width: 100%;
-    }
-    
-    .kilo-content-side {
-        order: 2;
-    }
-    
-    .kilo-embed {
-        max-height: 400px;
-    }
-    
-    .video-grid {
+    .videos-row {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .videos-row.small {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .brand-videos-col.single .instagram-card.vertical {
+        max-width: 240px;
     }
 }
 
 @media (max-width: 600px) {
-    .video-grid {
+    .videos-row {
         grid-template-columns: 1fr;
     }
     
-    .video-grid.single {
+    .videos-row.small {
+        grid-template-columns: 1fr;
+    }
+    
+    .brand-videos-col.single .instagram-card.vertical {
         max-width: 100%;
     }
 }

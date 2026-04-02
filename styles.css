@@ -1070,6 +1070,53 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     margin-top: -50px !important;
 }
 
+/* Kilo AI special layout - video at top, content side by side */
+.kilo-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: start;
+}
+
+.kilo-video-side {
+    order: 2;
+}
+
+.kilo-content-side {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.kilo-content-side .brand-header {
+    margin-bottom: 0;
+}
+
+.kilo-content-side .brand-copy {
+    margin: 0;
+}
+
+.kilo-embed {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 900px) {
+    .kilo-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .kilo-video-side {
+        order: 1;
+    }
+    
+    .kilo-content-side {
+        order: 2;
+    }
+}
+
 /* Clean video card embed */
 .video-card-link {
     display: block;

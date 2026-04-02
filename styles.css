@@ -1051,6 +1051,27 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     line-height: 1.8;
 }
 
+/* Kilo AI special layout - header and description side by side */
+.kilo-top-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-lg);
+    align-items: start;
+}
+
+.kilo-top-row .brand-header {
+    margin-bottom: 0;
+}
+
+.kilo-copy {
+    margin: 0;
+}
+
+.kilo-ai-section .kilo-embed {
+    width: 100%;
+}
+
 .brand-embed-wrapper {
     background: var(--glass-bg);
     backdrop-filter: var(--glass-blur);
@@ -1137,6 +1158,34 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     align-items: center;
     justify-content: center;
     background: rgba(0, 0, 0, 0.3);
+}
+
+.video-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.preview-text {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.preview-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .play-icon {

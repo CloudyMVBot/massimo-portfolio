@@ -1068,6 +1068,71 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .brand-embed-wrapper blockquote {
     margin: 0 auto !important;
     width: 100% !important;
+    min-width: 100% !important;
+}
+
+.brand-embed-wrapper iframe {
+    width: 100% !important;
+    min-width: 100% !important;
+}
+
+/* Kilo AI embed specific sizing */
+.kilo-embed {
+    min-height: 400px;
+    padding: 0;
+    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+}
+
+.custom-embed {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.custom-embed-thumbnail {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    position: relative;
+    min-height: 320px;
+}
+
+.play-icon {
+    width: 64px;
+    height: 64px;
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 12px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.custom-embed:hover .play-icon {
+    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.custom-embed-caption {
+    padding: var(--space-md);
+    text-align: center;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+}
+
+.custom-embed-caption p {
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.custom-embed-caption span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
 }
 
 /* Brand Image Styles */

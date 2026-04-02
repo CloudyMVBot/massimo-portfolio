@@ -1080,25 +1080,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .kilo-video-side {
     order: 2;
-}
-
-.kilo-content-side {
-    order: 1;
     display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-}
-
-.kilo-content-side .brand-header {
-    margin-bottom: 0;
-}
-
-.kilo-content-side .brand-copy {
-    margin: 0;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .kilo-embed {
-    width: 100%;
+    width: auto;
+    max-height: 500px;
     margin: 0;
     padding: 0;
 }
@@ -1115,12 +1104,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     .kilo-content-side {
         order: 2;
     }
+    
+    .kilo-embed {
+        max-height: 400px;
+    }
 }
 
 /* Clean video card embed */
 .video-card-link {
     display: block;
-    width: 100%;
+    width: auto;
+    height: 100%;
     text-decoration: none;
     color: inherit;
 }
@@ -1130,20 +1124,23 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     border-radius: 12px;
     overflow: hidden;
     border: none;
-    width: 100%;
+    width: auto;
+    height: 100%;
     display: flex;
     flex-direction: column;
     margin: 0;
 }
 
 .video-preview-bg {
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
     aspect-ratio: 9/16;
+    height: 100%;
+    width: auto;
+    max-height: 500px;
 }
 
 .video-thumbnail {

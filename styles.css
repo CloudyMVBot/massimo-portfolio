@@ -1051,9 +1051,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     overflow: hidden;
     border: 1px solid var(--border);
     min-height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: block;
 }
 
 .brand-embed-placeholder {
@@ -1061,6 +1059,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     font-size: 0.9rem;
     text-align: center;
     padding: var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
 }
 
 .brand-embed-wrapper blockquote {

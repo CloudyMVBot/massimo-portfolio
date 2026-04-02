@@ -776,12 +776,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     display: flex;
     overflow: hidden;
     gap: var(--space-lg);
+    width: 100%;
 }
 
 .reels-track {
     display: flex;
     gap: var(--space-lg);
     transition: transform 0.5s ease;
+    position: relative;
 }
 
 .reel-slide {
@@ -834,8 +836,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     color: var(--bg-primary);
 }
 
-.reels-carousel-btn.prev { left: -22px; }
-.reels-carousel-btn.next { right: -22px; }
+.reels-carousel-btn.prev { left: 0; }
+.reels-carousel-btn.next { right: 0; }
 
 /* ============================================
    SECTION TITLES FOR CAROUSELS

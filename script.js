@@ -151,6 +151,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (prevBtn) {
             prevBtn.addEventListener('click', function(e) {
                 e.preventDefault();
+                e.stopPropagation();
+                console.log('Reels prev clicked, currentIndex:', currentIndex, 'maxIndex:', maxIndex);
                 if (currentIndex > 0) {
                     currentIndex--;
                     updateCarousel();
@@ -161,6 +163,8 @@ document.addEventListener('DOMContentLoaded', function() {
         if (nextBtn) {
             nextBtn.addEventListener('click', function(e) {
                 e.preventDefault();
+                e.stopPropagation();
+                console.log('Reels next clicked, currentIndex:', currentIndex, 'maxIndex:', maxIndex);
                 if (currentIndex < maxIndex) {
                     currentIndex++;
                     updateCarousel();

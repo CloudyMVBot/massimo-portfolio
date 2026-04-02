@@ -1049,27 +1049,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     font-size: 1.1rem;
     color: var(--text-secondary);
     line-height: 1.8;
-}
-
-/* Kilo AI special layout - header and description side by side */
-.kilo-top-row {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: var(--space-xl);
-    margin-bottom: var(--space-lg);
-    align-items: start;
-}
-
-.kilo-top-row .brand-header {
-    margin-bottom: 0;
-}
-
-.kilo-copy {
-    margin: 0;
-}
-
-.kilo-ai-section .kilo-embed {
-    width: 100%;
+    margin-top: 0;
 }
 
 .brand-embed-wrapper {
@@ -1079,8 +1059,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--glass-border);
-    min-height: 300px;
-    display: block;
+    min-height: 580px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .brand-embed-placeholder {

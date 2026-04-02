@@ -1070,6 +1070,111 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     margin-top: -50px !important;
 }
 
+/* Clean video card embed */
+.video-card-link {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.video-preview-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-preview-bg {
+    flex: 1;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: var(--space-xl);
+    min-height: 380px;
+}
+
+.preview-content {
+    text-align: center;
+    z-index: 1;
+}
+
+.preview-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: var(--space-md);
+}
+
+.preview-title {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: var(--space-sm);
+    line-height: 1.2;
+}
+
+.preview-desc {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    margin: 0;
+}
+
+.play-button {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0f2027;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.play-button svg {
+    width: 32px;
+    height: 32px;
+    margin-left: 4px;
+}
+
+.video-card-link:hover .play-button {
+    transform: scale(1.1);
+    background: #fff;
+}
+
+.video-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) var(--space-lg);
+    background: rgba(34, 34, 32, 0.6);
+    border-top: 1px solid var(--glass-border);
+}
+
+.video-author {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.video-platform {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
 .brand-embed-placeholder {
     color: var(--text-muted);
     font-size: 0.9rem;

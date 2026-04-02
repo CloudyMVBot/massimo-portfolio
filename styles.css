@@ -1057,12 +1057,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border-radius: 12px;
-    overflow: hidden;
+    overflow: visible;
     border: 1px solid var(--glass-border);
     min-height: 580px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    padding-top: 0;
+}
+
+.brand-embed-wrapper iframe {
+    margin-top: -50px !important;
 }
 
 .brand-embed-placeholder {

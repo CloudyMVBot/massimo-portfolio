@@ -979,23 +979,57 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .brand-header {
     margin-bottom: var(--space-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.brand-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: var(--bg-surface);
+    padding: var(--space-sm);
+}
+
+.brand-logo-placeholder {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-surface);
+    border-radius: 12px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.brand-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
 }
 
 .brand-name {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
     color: var(--text-primary);
-    margin-bottom: var(--space-xs);
+    margin-bottom: 0;
     letter-spacing: -0.02em;
+    line-height: 1.1;
 }
 
 .brand-subtitle {
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    margin-bottom: 0;
 }
 
 .brand-content {

@@ -271,6 +271,42 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================
+    // TIKTOK EMBED FIX - MutationObserver
+    // ============================================
+    const tiktokCards = document.querySelectorAll('.video-card.tiktok-card');
+    
+    tiktokCards.forEach(card => {
+        // Apply fix to current and future child elements
+        const fixElement = (el) => {
+            if (el && el.style) {
+                el.style.setProperty('min-width', '0', 'important');
+                el.style.setProperty('max-width', '100%', 'important');
+                el.style.setProperty('width', '100%', 'important');
+                el.style.setProperty('margin', '0', 'important');
+            }
+        };
+        
+        // Fix existing div
+        const wrapper = card.querySelector('div');
+        if (wrapper) fixElement(wrapper);
+        
+        // Watch for TikTok's dynamic insertion
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                mutation.addedNodes.forEach((node) => {
+                    if (node.nodeType === 1 && node.tagName === 'DIV') {
+                        fixElement(node);
+                        // Also fix any nested divs
+                        node.querySelectorAll('div').forEach(fixElement);
+                    }
+                });
+            });
+        });
+        
+        observer.observe(card, { childList: true, subtree: true });
+    });
+
+    // ============================================
     // INITIALIZE
     // ============================================
     handleNavbarScroll();

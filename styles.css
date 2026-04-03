@@ -1222,11 +1222,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     overflow: hidden;
 }
 
-.video-card.tiktok-card div[style] {
-    max-width: none !important;
+/* Target the direct wrapper div created by TikTok */
+.video-card.tiktok-card > div {
+    max-width: 100% !important;
     min-width: 0 !important;
     width: 100% !important;
-    margin: -2px !important;
+    margin: 0 !important;
 }
 
 .video-card.tiktok-card iframe {

@@ -1223,6 +1223,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     min-width: unset !important;
 }
 
+.video-card.tiktok-card > div {
+    max-width: unset !important;
+    width: 100% !important;
+    margin: -2px !important;
+}
+
 .video-card.tiktok-card iframe {
     position: absolute;
     top: 0;

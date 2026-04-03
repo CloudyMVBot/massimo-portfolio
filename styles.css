@@ -1108,33 +1108,30 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-md);
-    align-items: start;
+    align-items: stretch;
 }
 
 .videos-row.two-cols {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.videos-row .video-card {
-    height: 380px;
-    max-height: 380px;
-}
-
+.videos-row .video-card,
 .videos-row.two-cols .video-card {
-    height: 420px;
-    max-height: 420px;
+    height: 400px;
+    max-height: 400px;
+    min-height: 400px;
 }
 
 .videos-row.stacked-reels {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-md);
 }
 
 .videos-row.stacked-reels .video-card {
-    height: 200px;
-    max-height: 200px;
-    aspect-ratio: 9/16;
+    height: 400px;
+    max-height: 400px;
+    min-height: 400px;
 }
 
 .brand-videos-col.stacked {
@@ -1188,8 +1185,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .video-card.tiktok-card,
 .video-card.instagram-card {
     aspect-ratio: 9/16;
-    max-height: 420px;
-    min-height: 380px;
+    height: 400px;
+    max-height: 400px;
+    min-height: 400px;
 }
 
 .video-card:hover {
@@ -1202,11 +1200,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     height: 100%;
     border: none;
     display: block;
-}
-
-.video-card.tiktok-card iframe {
-    transform: scale(0.95);
-    transform-origin: center;
+    object-fit: contain;
 }
 
 .video-card.instagram-card {

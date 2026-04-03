@@ -1111,19 +1111,30 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     align-items: start;
 }
 
-.videos-row .video-card {
-    height: 100%;
-    min-height: 380px;
-    max-height: 420px;
-}
-
-.videos-row.small {
+.videos-row.two-cols {
     grid-template-columns: repeat(2, 1fr);
 }
 
-.videos-row.small .video-card {
+.videos-row .video-card {
+    height: 380px;
     max-height: 380px;
-    min-height: 350px;
+}
+
+.videos-row.two-cols .video-card {
+    height: 420px;
+    max-height: 420px;
+}
+
+.videos-row.stacked-reels {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.videos-row.stacked-reels .video-card {
+    height: 200px;
+    max-height: 200px;
+    aspect-ratio: 9/16;
 }
 
 .brand-videos-col.stacked {
@@ -1140,6 +1151,24 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .youtube-card-large iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.youtube-card-below {
+    width: 100%;
+    aspect-ratio: 16/9;
+    max-height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    margin-top: var(--space-md);
+}
+
+.youtube-card-below iframe {
     width: 100%;
     height: 100%;
     border: none;
@@ -1172,11 +1201,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     width: 100%;
     height: 100%;
     border: none;
+    display: block;
+}
+
+.video-card.tiktok-card iframe {
+    transform: scale(0.95);
+    transform-origin: center;
 }
 
 .video-card.instagram-card {
     text-decoration: none;
     display: block;
+    position: relative;
 }
 
 .video-thumb-img {

@@ -1223,8 +1223,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     min-width: unset !important;
 }
 
-.video-card.tiktok-card > div {
+/* Target TikTok's embed wrapper div by data attribute */
+.video-card.tiktok-card [data-testid="embed-video"] {
     max-width: unset !important;
+    min-width: unset !important;
     width: 100% !important;
     margin: -2px !important;
 }

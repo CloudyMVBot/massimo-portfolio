@@ -1223,8 +1223,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     min-width: unset !important;
 }
 
-/* Target TikTok's embed wrapper div by data attribute */
-.video-card.tiktok-card [data-testid="embed-video"] {
+/* Target TikTok's embed wrapper by class */
+.video-card.tiktok-card .css-vptvdy {
     max-width: unset !important;
     min-width: unset !important;
     width: 100% !important;

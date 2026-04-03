@@ -271,6 +271,27 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ============================================
+    // TIKTOK EMBED FIX
+    // ============================================
+    const fixTikTokEmbeds = () => {
+        const tiktokCards = document.querySelectorAll('.video-card.tiktok-card');
+        tiktokCards.forEach(card => {
+            const embedDiv = card.querySelector('.css-vptvdy, [data-testid="embed-video"]');
+            if (embedDiv) {
+                embedDiv.style.maxWidth = 'none';
+                embedDiv.style.minWidth = 'unset';
+                embedDiv.style.width = '100%';
+                embedDiv.style.margin = '-2px';
+            }
+        });
+    };
+    
+    // Run immediately and after delays to catch dynamically loaded embeds
+    fixTikTokEmbeds();
+    setTimeout(fixTikTokEmbeds, 1000);
+    setTimeout(fixTikTokEmbeds, 3000);
+
+    // ============================================
     // INITIALIZE
     // ============================================
     handleNavbarScroll();

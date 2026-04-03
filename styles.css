@@ -1348,14 +1348,22 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 @media (max-width: 900px) {
     .brand-content-row {
         grid-template-columns: 1fr;
+        gap: var(--space-lg);
     }
     
     .videos-row {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .videos-row.small {
+    .videos-row.two-cols {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .videos-row .video-card,
+    .videos-row.two-cols .video-card {
+        height: 350px;
+        max-height: 350px;
+        min-height: 350px;
     }
     
     .brand-videos-col.single .instagram-card.vertical {
@@ -1364,16 +1372,40 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 @media (max-width: 600px) {
-    .videos-row {
+    .brand-content-row {
         grid-template-columns: 1fr;
+        gap: var(--space-md);
     }
     
-    .videos-row.small {
-        grid-template-columns: 1fr;
+    .videos-row,
+    .videos-row.two-cols {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+    
+    .videos-row .video-card,
+    .videos-row.two-cols .video-card {
+        height: 280px;
+        max-height: 280px;
+        min-height: 280px;
+    }
+    
+    .brand-videos-col.single {
+        width: 100%;
     }
     
     .brand-videos-col.single .instagram-card.vertical {
-        max-width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+    
+    .brand-text-col {
+        gap: var(--space-sm);
+    }
+    
+    .brand-copy {
+        font-size: 1rem;
+        line-height: 1.6;
     }
 }
 

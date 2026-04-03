@@ -1223,8 +1223,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     min-width: unset !important;
 }
 
-/* Target TikTok's embed wrapper by class */
-.video-card.tiktok-card .css-vptvdy {
+/* Target TikTok's embed wrapper by class - aggressive override */
+.video-card.tiktok-card .css-vptvdy,
+.video-card.tiktok-card [class*="vptvdy"],
+.video-card.tiktok-card [style*="max-width: 325px"],
+.video-card.tiktok-card [style*="width: 540px"] {
+    max-width: unset !important;
+    min-width: unset !important;
+    width: 100% !important;
+    margin: -2px !important;
+}
+
+/* Additional override for the specific TikTok wrapper */
+.video-card.tiktok-card > div > div {
     max-width: unset !important;
     min-width: unset !important;
     width: 100% !important;

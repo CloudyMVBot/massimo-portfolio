@@ -1013,6 +1013,20 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     color: var(--text-primary);
 }
 
+.lookingglass-logo {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2rem;
+    color: #fff;
+}
+
 .brand-header-text {
     display: flex;
     flex-direction: column;
@@ -1200,7 +1214,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     height: 100%;
     border: none;
     display: block;
-    object-fit: contain;
+}
+
+/* TikTok embeds need special handling to prevent cut-off */
+.video-card.tiktok-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.video-card.tiktok-card iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 108%;
+    height: 108%;
+    transform: translate(-50%, -50%);
 }
 
 .video-card.instagram-card {

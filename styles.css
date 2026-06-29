@@ -195,9 +195,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2;
-    opacity: 0.5;
-    pointer-events: auto;
+    z-index: 0;
+    opacity: 0.4;
+    pointer-events: none;
 }
 
 /* 3D Render Background - Hero only */
@@ -1195,8 +1195,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-/* TikTok and Instagram Reels - Vertical 9:16 */
-.video-card.tiktok-card,
+/* Instagram Reels - Vertical 9:16 with fixed height */
 .video-card.instagram-card {
     aspect-ratio: 9/16;
     height: 400px;
@@ -1216,26 +1215,35 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     display: block;
 }
 
-/* TikTok embeds - proper sizing */
+/* TikTok embeds - let aspect-ratio control height, no fixed height */
 .video-card.tiktok-card {
     position: relative;
     overflow: hidden;
     width: 100%;
     max-width: 325px;
     margin: 0 auto;
-}
-
-/* Allow TikTok's natural sizing but constrain container */
-.video-card.tiktok-card > div {
-    width: 100% !important;
-    max-width: 325px !important;
-    margin: 0 auto !important;
+    aspect-ratio: 9 / 16;
+    height: auto;
+    max-height: none;
+    min-height: 0;
 }
 
 .video-card.tiktok-card iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border: none;
+    scrolling: no;
+}
+
+/* Override .videos-row fixed height for tiktok cards */
+.videos-row .video-card.tiktok-card,
+.videos-row.two-cols .video-card.tiktok-card {
+    height: auto;
+    max-height: none;
+    min-height: 0;
 }
 
 /* TikTok specific responsive - stack to 1 column on smaller screens */
@@ -1654,6 +1662,71 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     color: var(--text-muted);
 }
 
+/* Exhibited Work Two-Column overrides */
+.exhibited-section {
+    padding-bottom: var(--space-xl);
+}
+
+.exhibited-section .brand-content-row {
+    text-align: left;
+    align-items: center;
+    padding: var(--space-xl) 0;
+}
+
+.exhibited-text-col {
+    justify-content: center;
+    gap: var(--space-xl);
+}
+
+.exhibited-page-text {
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.exhibited-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.exhibited-list li {
+    font-size: clamp(1rem, 1.6vw, 1.1rem);
+    color: var(--text-secondary);
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.exhibited-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+/* Exhibited Work Video */
+.exhibited-video-card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    aspect-ratio: 9 / 16;
+    max-width: 340px;
+    margin: 0 auto;
+}
+
+.exhibited-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 /* Brand Image Styles */
 .brand-image-wrapper {
     background: var(--bg-surface);
@@ -1969,29 +2042,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     text-align: center;
 }
 
-/* Fix reveal animations - show content immediately */
-.reveal {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Adjusted particle canvas for better visibility */
-.particle-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    opacity: 0.4;
-    pointer-events: auto;
-}
 
 /* CTA Section Spacing */
 .cta-section {
@@ -2109,6 +2160,83 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     
     .documentary-cta {
         padding: var(--space-lg) 0;
+    }
+}
+
+/* Documentary featured project two-column layout */
+.doc-featured {
+    padding: var(--space-xl) 0 var(--space-2xl);
+    align-items: center;
+}
+
+.doc-project-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-md);
+    letter-spacing: -0.02em;
+}
+
+.doc-project-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: var(--space-lg);
+}
+
+.doc-project-meta p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.doc-meta-label {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.doc-featured-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+}
+
+.doc-featured-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Additional ATH work section */
+.doc-additional {
+    padding-top: var(--space-2xl);
+}
+
+.doc-additional-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 var(--space-xl);
+    letter-spacing: -0.01em;
+}
+
+/* 3-column grid for additional docs */
+.doc-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 900px) {
+    .doc-grid {
+        grid-template-columns: 1fr;
+    }
+    .doc-featured {
+        flex-direction: column;
     }
 }
 
@@ -2236,7 +2364,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     }
     
     .stats-hero {
-        padding: var(--space-2xl) 0;
+        padding: calc(var(--space-3xl) + 60px) 0 var(--space-2xl);
     }
 }
 

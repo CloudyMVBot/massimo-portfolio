@@ -34,8 +34,6 @@
 .refresh-site .growth-logo-mv { padding: 0.25rem 0; filter: brightness(0) invert(1); }
 .refresh-site .growth-chart .growth-brand h3 { margin: 0; line-height: 1.2; }
 .refresh-site .growth-chart h3 { font-family: var(--font-heading); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.45rem; }
-.refresh-site .growth-chart figcaption p, .refresh-site .chart-note { color: var(--text-secondary); font-size: 0.9rem; }
-.refresh-site .growth-chart figcaption p { min-height: 3.2em; }
 .refresh-site .growth-svg { display: block; width: 100%; height: auto; overflow: visible; color: var(--text-primary); }
 .refresh-site .growth-grid { fill: none; stroke: var(--text-primary); stroke-opacity: 0.07; stroke-width: 1; }
 .refresh-site .growth-grid .growth-baseline { stroke-opacity: 0.16; }
@@ -44,7 +42,6 @@
 .refresh-site .growth-point-start { stroke: var(--text-secondary); }
 .refresh-site .growth-values { fill: var(--text-primary); font-family: var(--font-body); font-size: 18px; font-weight: 500; font-variant-numeric: tabular-nums; }
 .refresh-site .growth-labels { fill: var(--text-secondary); font-family: var(--font-body); font-size: 15px; }
-.refresh-site .chart-note { margin-top: 1.25rem; line-height: 1.7; }
 .refresh-site.charts-ready .growth-line { stroke-dasharray: 1; }
 .refresh-site.charts-ready .growth-chart:not(.is-visible) .growth-line { stroke-dashoffset: 1; }
 .refresh-site.charts-ready .growth-chart:not(.is-visible) .growth-area { clip-path: inset(0 100% 0 0); }
@@ -83,7 +80,6 @@
 @media (max-width: 900px) {
     .refresh-site .growth-charts { grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
     .refresh-site .growth-chart { max-width: 560px; }
-    .refresh-site .growth-chart figcaption p { min-height: 0; }
 }
 @media (max-width: 768px) {
     .refresh-site .hero { padding-top: 9rem; padding-bottom: 10rem; }
@@ -111,4 +107,18 @@
 /* Keep content results concise while preserving the section label for assistive technology. */
 .refresh-site .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .refresh-site .content-results .growth-charts { margin-top: 0; }
-.refresh-site .growth-chart figcaption .growth-summary { min-height: 0; font-size: 1rem; }
+
+/* Logos give the selected collaborations a consistent, quieter rhythm. */
+.refresh-site .content-projects-logos .content-project { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); }
+.refresh-site .content-project > .content-project-logo { width: 160px; height: 120px; aspect-ratio: auto; object-fit: contain; justify-self: center; }
+.refresh-site .content-project > .content-project-logo-mv { width: 180px; filter: brightness(0) invert(1); }
+.refresh-site .related-work-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; padding-top: var(--space-2xl); padding-bottom: var(--space-2xl); }
+.refresh-site .related-work-actions .btn { display: inline-flex; min-height: 52px; padding: 1rem 2rem; text-decoration: none; }
+@media (max-width: 768px) {
+    .refresh-site .content-projects-logos .content-project { grid-template-columns: minmax(0, 1fr); }
+    .refresh-site .content-project > .content-project-logo { width: 96px; height: 72px; justify-self: start; }
+    .refresh-site .content-project > .content-project-logo-mv { width: 120px; }
+}
+@media (max-width: 480px) {
+    .refresh-site .related-work-actions .btn { width: 100%; }
+}

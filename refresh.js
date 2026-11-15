@@ -56,24 +56,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const visibleSurfaces = new Set();
     function syncSignalMotion() {
         pulseSurfaces.forEach(function (surface) {
-            const group = surface.closest('[data-signal-group]');
-            const paused = group && group.dataset.signalsPaused === 'true';
-            surface.classList.toggle('motion-active', visibleSurfaces.has(surface) && !document.hidden && !motionPreference.matches && !paused);
-        });
-        document.querySelectorAll('[data-signal-toggle]').forEach(function (button) {
-            button.disabled = motionPreference.matches;
+            surface.classList.toggle('motion-active', visibleSurfaces.has(surface) && !document.hidden && !motionPreference.matches);
         });
     }
-    document.querySelectorAll('[data-signal-toggle]').forEach(function (button) {
-        button.addEventListener('click', function () {
-            const group = button.closest('[data-signal-group]');
-            const paused = group.dataset.signalsPaused !== 'true';
-            group.dataset.signalsPaused = String(paused);
-            button.setAttribute('aria-pressed', String(paused));
-            button.textContent = paused ? 'Resume signals' : 'Pause signals';
-            syncSignalMotion();
-        });
-    });
     if (pulseSurfaces.length && 'IntersectionObserver' in window) {
         const signalObserver = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {

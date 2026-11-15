@@ -6,7 +6,6 @@
 .map-toolbar { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.7rem; letter-spacing: 0.06em; color: var(--text-secondary); }
 .map-toolbar { align-items: center; padding-top: 0.3rem; padding-bottom: 0.3rem; }
 .map-toolbar-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
-.map-toolbar .signal-toggle { font: inherit; letter-spacing: 0; }
 .map-viewport { overflow-x: auto; scrollbar-color: var(--text-muted) var(--bg-primary); scrollbar-width: thin; }
 .exhibition-map { display: block; width: 100%; min-width: 820px; height: auto; }
 .map-graticule { fill: none; stroke: currentColor; stroke-opacity: 0.055; stroke-width: 1; }

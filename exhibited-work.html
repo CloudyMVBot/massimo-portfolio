@@ -5,34 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exhibited Work — Massimo Vendola</title>
     <meta name="description" content="My digital work has been exhibited in cities like Miami, Amsterdam, Tokyo, and Wroclaw.">
+    <link rel="canonical" href="https://www.massimo.productions/exhibited-work.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navigation.css?v=lines-1">
+    <link rel="stylesheet" href="refresh.css?v=spatial-signals-1">
 </head>
-<body>
+<body class="refresh-site site-navigation">
+    <a href="#main" class="skip-link">Skip to content</a>
     <!-- Particle Canvas Background -->
     <canvas id="particleCanvas" class="particle-canvas"></canvas>
 
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
         <div class="nav-container">
             <a href="index.html" class="nav-logo"><img src="assets/mv-logo.png" alt="Massimo Vendola" class="nav-logo-img"></a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-controls="navMenu" aria-expanded="false">
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="documentaries.html" class="nav-link">Documentaries</a></li>
-                <li><a href="digital-art.html" class="nav-link">Digital Art</a></li>
-                <li><a href="viral-selects.html" class="nav-link">Viral Selects</a></li>
-                <li><a href="exhibited-work.html" class="nav-link active">Exhibited Work</a></li>
+                <li><a href="spatial-storytelling.html" class="nav-link active">Spatial Storytelling</a></li>
+                <li><a href="content-strategy.html" class="nav-link">Content Strategy</a></li>
                 <li><a href="branded-content.html" class="nav-link">Branded Content</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="page-main">
+    <main class="page-main" id="main">
         <!-- Page Header -->
         <header class="page-header">
             <div class="container">
@@ -54,11 +57,10 @@
                     </ul>
                 </div>
                 <div class="brand-videos-col single">
-                    <div class="exhibited-video-card">
-                        <video autoplay muted loop playsinline class="exhibited-video">
-                            <source src="https://massimo.productions/_assets/video/d50153fdbb72464aa411cd7627e7d8cd.mp4" type="video/mp4">
-                        </video>
-                    </div>
+                    <a href="spatial-storytelling.html" class="exhibited-artwork">
+                        <img src="assets/i-hope-you-render.png" alt="Explore Massimo's experimental 3D and point cloud artwork" width="3840" height="2160" loading="lazy">
+                        <span>Explore the digital art <span aria-hidden="true">→</span></span>
+                    </a>
                 </div>
             </div>
 
@@ -66,6 +68,10 @@
                 <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener" class="link-button">Click here for more info</a>
             </div>
         </section>
+        <div class="container related-work">
+            <a href="spatial-storytelling.html">Back to Spatial Storytelling</a>
+            <a href="spatial-storytelling.html">Digital Art <span aria-hidden="true">→</span></a>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -81,6 +87,8 @@
     </footer>
 
     <script src="particles.js"></script>
+    <script src="navigation.js?v=lines-1"></script>
     <script src="script.js"></script>
+    <script src="refresh.js?v=spatial-signals-1"></script>
 </body>
 </html>

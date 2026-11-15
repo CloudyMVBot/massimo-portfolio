@@ -1,0 +1,47 @@
+.exhibition-section { position: relative; z-index: 2; padding-top: var(--space-lg); padding-bottom: var(--space-3xl); }
+.exhibition-intro { margin-bottom: var(--space-lg); }
+.exhibition-intro h2 { font-family: var(--font-heading); font-size: clamp(1.75rem, 3vw, 2.5rem); letter-spacing: -0.02em; margin-bottom: 0.6rem; }
+.exhibition-intro p { color: var(--text-secondary); max-width: 65ch; }
+.exhibition-console { color: var(--text-primary); background: var(--bg-primary); border: 1px solid var(--border); }
+.map-toolbar { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem; padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.7rem; letter-spacing: 0.06em; color: var(--text-secondary); }
+.map-toolbar { align-items: center; padding-top: 0.3rem; padding-bottom: 0.3rem; }
+.map-toolbar-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+.map-toolbar .signal-toggle { font: inherit; letter-spacing: 0; }
+.map-viewport { overflow-x: auto; scrollbar-color: var(--text-muted) var(--bg-primary); scrollbar-width: thin; }
+.exhibition-map { display: block; width: 100%; min-width: 820px; height: auto; }
+.map-graticule { fill: none; stroke: currentColor; stroke-opacity: 0.055; stroke-width: 1; }
+.map-marker { cursor: pointer; color: var(--text-primary); outline: none; }
+.map-hit { fill: transparent; }
+.map-marker-orbit { fill: none; stroke: currentColor; stroke-opacity: 0.35; stroke-width: 1; }
+.map-marker-core { fill: currentColor; }
+.map-crosshair { fill: none; stroke: currentColor; stroke-width: 1; stroke-opacity: 0.5; }
+.map-label-leader { fill: none; stroke: currentColor; stroke-width: 1; stroke-opacity: 0.4; }
+.map-label { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 14px; letter-spacing: 0.06em; fill: currentColor; paint-order: stroke; stroke: var(--bg-primary); stroke-width: 4px; stroke-linejoin: round; }
+.map-marker.is-selected .map-marker-orbit { stroke-opacity: 1; stroke-width: 1.5; }
+.map-marker:hover .map-marker-orbit, .map-marker:focus-visible .map-marker-orbit { stroke-opacity: 1; stroke-width: 2; }
+.map-marker:focus-visible .map-hit { stroke: currentColor; stroke-width: 1; stroke-dasharray: 2 4; }
+.map-readout { display: grid; grid-template-columns: 1fr 2fr auto; gap: 1rem; align-items: center; padding: 1.25rem; border-top: 1px solid var(--border); font-size: 0.9rem; }
+#map-selected-city { font-family: var(--font-heading); font-weight: 600; }
+#map-selected-venue { color: var(--text-secondary); }
+.map-coordinates { display: flex; flex-direction: column; gap: 0.2rem; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 0.75rem; font-variant-numeric: tabular-nums; }
+.map-coordinate-label { color: var(--text-secondary); font-size: 0.6rem; letter-spacing: 0.06em; }
+.exhibition-places { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+.exhibition-place { display: block; min-width: 0; min-height: 72px; text-align: left; color: var(--text-secondary); padding: 0.75rem 0; border-bottom: 1px solid var(--border); transition: border-color 0.2s ease, color 0.2s ease; }
+.exhibition-place:hover, .exhibition-place.is-selected { color: var(--text-primary); border-color: var(--text-secondary); }
+.venue-city { display: flex; justify-content: space-between; gap: 0.5rem; font-family: var(--font-heading); font-size: 1.1rem; }
+.venue-city > span { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; color: var(--text-secondary); font-size: 0.7rem; }
+.venue-name { display: block; font-size: 0.85rem; margin-top: 0.4rem; }
+.exhibition-worldwide { color: var(--text-secondary); font-size: 0.85rem; margin-top: 1.5rem; }
+@media (max-width: 900px) {
+    .map-readout { grid-template-columns: 1fr; gap: 0.6rem; }
+    .map-coordinates { flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 0.75rem; }
+    .exhibition-places { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem 1.5rem; }
+}
+@media (max-width: 480px) {
+    .map-toolbar { padding: 0.85rem; font-size: 0.6rem; }
+    .map-readout { padding: 1rem; }
+    .venue-city { font-size: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .exhibition-place { transition: none; }
+}

@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Massimo Vendola - Creative Technologist & 3D Artist. Transforming real-world environments into immersive digital experiences through point cloud art, branded content, and creative direction.">
-    <meta name="keywords" content="3D Artist, Creative Technologist, Point Cloud Art, Branded Content, Creative Direction, Digital Art">
+    <meta name="description" content="Massimo Vendola — Content Strategy &amp; Production and Spatial Storytelling. Technology-led campaigns, 3D art, Gaussian Splatting, and immersive experiences.">
+    <meta name="keywords" content="Content Strategy, Content Production, Spatial Storytelling, Gaussian Splatting, Spatial Computing, 3D Art, Branded Content">
     <meta name="author" content="Massimo Vendola">
-    <meta property="og:title" content="Massimo Vendola - Creative Technologist & 3D Artist">
-    <meta property="og:description" content="Transforming real-world environments into immersive digital experiences.">
+    <meta property="og:title" content="Massimo Vendola — Content &amp; Spatial Storytelling">
+    <meta property="og:description" content="Content strategy, video production, 3D art, and immersive experiences by Massimo Vendola.">
     <meta property="og:type" content="website">
-    <title>Massimo Vendola - Creative Technologist & 3D Artist</title>
+    <title>Massimo Vendola — Content &amp; Spatial Storytelling</title>
+    <link rel="canonical" href="https://www.massimo.productions/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navigation.css?v=lines-1">
+    <link rel="stylesheet" href="refresh.css?v=spatial-signals-1">
 </head>
-<body>
+<body class="refresh-site site-navigation">
+    <a href="#main" class="skip-link">Skip to content</a>
     <!-- 3D Render Background -->
     <div class="hero-background"></div>
     
@@ -23,31 +27,31 @@
     <canvas id="particleCanvas" class="particle-canvas"></canvas>
 
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
         <div class="nav-container">
             <a href="index.html" class="nav-logo"><img src="assets/mv-logo.png" alt="Massimo Vendola" class="nav-logo-img"></a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-controls="navMenu" aria-expanded="false">
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="documentaries.html" class="nav-link">Documentaries</a></li>
-                <li><a href="digital-art.html" class="nav-link">Digital Art</a></li>
-                <li><a href="viral-selects.html" class="nav-link">Viral Selects</a></li>
-                <li><a href="exhibited-work.html" class="nav-link">Exhibited Work</a></li>
+                <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+                <li><a href="spatial-storytelling.html" class="nav-link">Spatial Storytelling</a></li>
+                <li><a href="content-strategy.html" class="nav-link">Content Strategy</a></li>
                 <li><a href="branded-content.html" class="nav-link">Branded Content</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
         <div class="hero-content">
-            <h1 class="hero-title reveal">Transforming Spaces with 3D Art, Content & Strategy.</h1>
-            <p class="hero-subtitle reveal">I turn environments into immersive digital experiences through point cloud art, branded content, and creative direction.</p>
-            <div class="hero-ctas reveal">
-                <a href="documentaries.html" class="btn btn-primary">View Documentaries</a>
-                <a href="digital-art.html" class="btn btn-secondary">Digital Art</a>
+            <h1 class="hero-title" id="hero-title">Content Strategy &amp; Spatial Storytelling.</h1>
+            <p class="hero-subtitle">I'm Massimo Vendola, a Brooklyn-based content producer and 3D artist. I develop content around emerging technology and create immersive visuals from real-world spaces.</p>
+            <div class="hero-ctas">
+                <a href="spatial-storytelling.html" class="btn btn-secondary">Spatial Storytelling</a>
+                <a href="content-strategy.html" class="btn btn-secondary">Content Strategy</a>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -160,14 +164,93 @@
         </div>
     </section>
 
+    <section class="practice-section" id="spatial-storytelling" aria-labelledby="spatial-title">
+        <div class="container practice-layout">
+            <a href="spatial-storytelling.html" class="practice-image"><img src="assets/i-hope-you-render.png" alt="A real-world scan reimagined as a 3D point cloud artwork" width="3840" height="2160" loading="lazy"></a>
+            <div class="practice-copy">
+                <h2 id="spatial-title">Spatial Storytelling</h2>
+                <p>3D scanning, Gaussian Splatting, point clouds, and motion. I use real-world spaces as the starting point for digital art, immersive experiences, and large-scale visuals.</p>
+                <div class="practice-links"><a href="spatial-storytelling.html">View spatial work</a><a href="spatial-storytelling.html#places-exhibited">Places exhibited</a></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="practice-section" id="content-strategy" aria-labelledby="content-title">
+        <div class="container practice-layout practice-layout-reverse">
+            <div class="practice-copy">
+                <h2 id="content-title">Content Strategy</h2>
+                <p>I develop the ideas, produce the content, and plan how it reaches people. My work spans social channels, brand campaigns, and video, with a focus on technology, art, and emerging tools.</p>
+                <div class="practice-links"><a href="content-strategy.html">View content work</a><a href="branded-content.html">Branded content</a></div>
+            </div>
+            <a href="content-strategy.html" class="practice-image"><img src="assets/thumbnails/artechouse-reel-1.jpg" alt="Visitors at an ARTECHOUSE immersive exhibition, from my social content work" width="720" height="1280" loading="lazy"></a>
+        </div>
+        <div class="container results-section" data-signal-group>
+            <h2>Audience growth</h2>
+            <div class="growth-charts">
+                <figure class="growth-chart" data-pulse-surface>
+                    <figcaption><div class="growth-heading"><div class="growth-brand"><img class="growth-logo" src="assets/Artechouse.jpg" alt="" width="40" height="40"><h3>ARTECHOUSE</h3></div><span class="growth-change">+82%</span></div><p>Instagram followers</p></figcaption>
+                    <svg class="growth-svg" viewBox="0 0 360 220" role="img" aria-labelledby="home-artechouse-title home-artechouse-description">
+                        <title id="home-artechouse-title">ARTECHOUSE: 500K to 910K</title>
+                        <desc id="home-artechouse-description">Instagram followers. Before: 500K. After: 910K. The curve illustrates the reported start and end values; intermediate measurements are not shown.</desc>
+                        <defs><linearGradient id="home-artechouse-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="currentColor" stop-opacity="0.12"></stop><stop offset="100%" stop-color="currentColor" stop-opacity="0"></stop></linearGradient></defs>
+                        <g class="growth-grid" aria-hidden="true"><path d="M24 42 H336 M24 108 H336"></path><path class="growth-baseline" d="M24 180 H336"></path></g>
+                        <path class="growth-area" d="M24 100 Q180 100 336 42 L336 180 L24 180 Z" fill="url(#home-artechouse-fill)" aria-hidden="true"></path>
+                        <path class="growth-line" d="M24 100 Q180 100 336 42" pathLength="1" aria-hidden="true"></path>
+                        <circle class="growth-point growth-point-start" cx="24" cy="100" r="4" aria-hidden="true"></circle>
+                        <g class="growth-current-pulse" transform="translate(336 42)" aria-hidden="true"><circle class="radial-ring" r="5"></circle><circle class="radial-ring radial-ring-echo" r="5"></circle></g>
+                        <circle class="growth-point growth-point-end" cx="336" cy="42" r="5" aria-hidden="true"></circle>
+                        <g class="growth-values" aria-hidden="true"><text x="24" y="83">500K</text><text x="336" y="20" text-anchor="end">910K</text></g>
+                        <g class="growth-labels" aria-hidden="true"><text x="24" y="210">Before</text><text x="336" y="210" text-anchor="end">After</text></g>
+                    </svg>
+                    <p class="chart-note">Grew the account as in-house video lead.</p>
+                </figure>
+                <figure class="growth-chart" data-pulse-surface>
+                    <figcaption><div class="growth-heading"><div class="growth-brand"><img class="growth-logo" src="assets/kiri.png" alt="" width="40" height="40"><h3>KIRI Engine</h3></div><span class="growth-change">+100%</span></div><p>Account growth over six months</p></figcaption>
+                    <svg class="growth-svg" viewBox="0 0 360 220" role="img" aria-labelledby="home-kiri-title home-kiri-description">
+                        <title id="home-kiri-title">KIRI Engine: 1× to 2×</title>
+                        <desc id="home-kiri-description">Account growth over six months. Start: 1×. 6 months: 2×. The curve illustrates the reported start and end values; intermediate measurements are not shown.</desc>
+                        <defs><linearGradient id="home-kiri-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="currentColor" stop-opacity="0.12"></stop><stop offset="100%" stop-color="currentColor" stop-opacity="0"></stop></linearGradient></defs>
+                        <g class="growth-grid" aria-hidden="true"><path d="M24 42 H336 M24 108 H336"></path><path class="growth-baseline" d="M24 180 H336"></path></g>
+                        <path class="growth-area" d="M24 112 Q180 112 336 42 L336 180 L24 180 Z" fill="url(#home-kiri-fill)" aria-hidden="true"></path>
+                        <path class="growth-line" d="M24 112 Q180 112 336 42" pathLength="1" aria-hidden="true"></path>
+                        <circle class="growth-point growth-point-start" cx="24" cy="112" r="4" aria-hidden="true"></circle>
+                        <g class="growth-current-pulse" transform="translate(336 42)" aria-hidden="true"><circle class="radial-ring" r="5"></circle><circle class="radial-ring radial-ring-echo" r="5"></circle></g>
+                        <circle class="growth-point growth-point-end" cx="336" cy="42" r="5" aria-hidden="true"></circle>
+                        <g class="growth-values" aria-hidden="true"><text x="24" y="95">1×</text><text x="336" y="20" text-anchor="end">2×</text></g>
+                        <g class="growth-labels" aria-hidden="true"><text x="24" y="210">Start</text><text x="336" y="210" text-anchor="end">6 months</text></g>
+                    </svg>
+                    <p class="chart-note">Follower growth over six months. Relative audience size.</p>
+                </figure>
+                <figure class="growth-chart" data-pulse-surface>
+                    <figcaption><div class="growth-heading"><div class="growth-brand"><img class="growth-logo growth-logo-mv" src="assets/mv-logo.png" alt="" width="40" height="40"><h3>My personal brand</h3></div></div><p>Followers</p></figcaption>
+                    <svg class="growth-svg" viewBox="0 0 360 220" role="img" aria-labelledby="home-personal-title home-personal-description">
+                        <title id="home-personal-title">My personal brand: 0 to 100K</title>
+                        <desc id="home-personal-description">Followers. Launch: 0. 100K milestone: 100K. The curve illustrates the reported start and end values; intermediate measurements are not shown.</desc>
+                        <defs><linearGradient id="home-personal-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="currentColor" stop-opacity="0.12"></stop><stop offset="100%" stop-color="currentColor" stop-opacity="0"></stop></linearGradient></defs>
+                        <g class="growth-grid" aria-hidden="true"><path d="M24 42 H336 M24 108 H336"></path><path class="growth-baseline" d="M24 180 H336"></path></g>
+                        <path class="growth-area" d="M24 174 Q180 174 336 42 L336 180 L24 180 Z" fill="url(#home-personal-fill)" aria-hidden="true"></path>
+                        <path class="growth-line" d="M24 174 Q180 174 336 42" pathLength="1" aria-hidden="true"></path>
+                        <circle class="growth-point growth-point-start" cx="24" cy="174" r="4" aria-hidden="true"></circle>
+                        <g class="growth-current-pulse" transform="translate(336 42)" aria-hidden="true"><circle class="radial-ring" r="5"></circle><circle class="radial-ring radial-ring-echo" r="5"></circle></g>
+                        <circle class="growth-point growth-point-end" cx="336" cy="42" r="5" aria-hidden="true"></circle>
+                        <g class="growth-values" aria-hidden="true"><text x="24" y="157">0</text><text x="336" y="20" text-anchor="end">100K</text></g>
+                        <g class="growth-labels" aria-hidden="true"><text x="24" y="210">Launch</text><text x="336" y="210" text-anchor="end">100K milestone</text></g>
+                    </svg>
+                    <p class="chart-note">Built from the ground up around technology and 3D.</p>
+                </figure>
+            </div>
+            <div class="growth-footer"><p class="growth-method">Reported start and end values; curves are illustrative.</p><button class="signal-toggle" type="button" data-signal-toggle aria-pressed="false">Pause signals</button></div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="about-section" id="about">
         <div class="container">
             <h2 class="about-title reveal">About Me</h2>
             <div class="about-content reveal">
                 <div class="about-text">
-                    <p>I'm a Brooklyn-based Creative Technologist and 3D Artist specializing in point cloud visualization, 3D scanning, and creative technology. My work bridges the gap between physical spaces and digital experiences—creating immersive content that resonates with millions.</p>
-                    <p>From ARTECHOUSE documentaries to viral brand campaigns, I've helped companies like NASA, Polycam, SmallRig, and Intel tell their stories through cutting-edge visual experiences.</p>
+                    <p>I'm Massimo Vendola, a content producer and 3D artist based in Brooklyn. I work across content strategy, video production, and spatial storytelling.</p>
+                    <p>I've led video production at ARTECHOUSE, produced content for brands including Intel and KIRI Engine, and built my own audience sharing 3D workflows and emerging technology. My digital artwork has been shown on festival stages, public screens, and immersive installations around the world.</p>
                 </div>
                 <div class="about-image">
                     <img src="assets/rumta9ahwcvm96vkxww7.webp" alt="Massimo Vendola" class="about-img">
@@ -181,12 +264,16 @@
         <div class="container">
             <div class="contact-info reveal">
                 <p class="contact-location">Brooklyn, New York</p>
+                <p class="contact-invitation">Get in touch</p>
+                <a href="mailto:outreach@massimo.productions" class="contact-email">outreach@massimo.productions</a>
                 <p class="contact-social">
                     <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener">@mv.nyc</a>
                 </p>
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -196,6 +283,8 @@
     </footer>
 
     <script src="particles.js"></script>
+    <script src="navigation.js?v=lines-1"></script>
     <script src="script.js"></script>
+    <script src="refresh.js?v=spatial-signals-1"></script>
 </body>
 </html>

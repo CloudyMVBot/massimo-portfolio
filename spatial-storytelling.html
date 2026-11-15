@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spatial Storytelling — Massimo Vendola</title>
+    <meta name="description" content="3D capture, Gaussian Splatting, point clouds, and experimental motion. I turn real-world spaces into digital art and immersive visual experiences.">
+    <link rel="canonical" href="https://www.massimo.productions/spatial-storytelling.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navigation.css?v=lines-1">
+    <link rel="stylesheet" href="refresh.css?v=spatial-signals-1">
+    <link rel="stylesheet" href="exhibition-map.css?v=spatial-signals-1">
+</head>
+<body class="refresh-site site-navigation">
+    <a href="#main" class="skip-link">Skip to content</a>
+    <!-- Particle Canvas Background -->
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo"><img src="assets/mv-logo.png" alt="Massimo Vendola" class="nav-logo-img"></a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Toggle navigation" aria-controls="navMenu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="spatial-storytelling.html" class="nav-link active" aria-current="page">Spatial Storytelling</a></li>
+                <li><a href="content-strategy.html" class="nav-link">Content Strategy</a></li>
+                <li><a href="branded-content.html" class="nav-link">Branded Content</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="page-main" id="main">
+        <!-- Page Header -->
+        <section class="page-header-container">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">Spatial Storytelling</h1>
+                    <p class="page-subtitle">3D capture, Gaussian Splatting, point clouds, and experimental motion. I turn real-world spaces into digital art and immersive visual experiences.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- YouTube Videos Carousel -->
+        <section class="carousel-section-wrapper">
+            <div class="container">
+                <h2 class="carousel-section-title">3D &amp; Motion</h2>
+                <div class="carousel-container" data-carousel="video">
+                    <div class="carousel">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <div class="video-wrapper">
+                                    <iframe 
+                                        src="https://www.youtube-nocookie.com/embed/4m9nC9H5eZE" 
+                                        title="Digital Art Video 1"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="video-wrapper">
+                                    <iframe 
+                                        src="https://www.youtube-nocookie.com/embed/ij29YtcvWTc" 
+                                        title="Digital Art Video 2"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <div class="video-wrapper">
+                                    <iframe 
+                                        src="https://www.youtube-nocookie.com/embed/7mNLiFBBmFI" 
+                                        title="Digital Art Video 3"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn prev" aria-label="Previous video">‹</button>
+                    <button class="carousel-btn next" aria-label="Next video">›</button>
+                    <div class="carousel-dots">
+                        <button class="carousel-dot active" aria-label="Go to slide 1"></button>
+                        <button class="carousel-dot" aria-label="Go to slide 2"></button>
+                        <button class="carousel-dot" aria-label="Go to slide 3"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instagram Reels Carousel -->
+        <section class="carousel-section-wrapper reels-section">
+            <div class="container">
+                <h2 class="carousel-section-title">Instagram Reels</h2>
+                <div class="reels-carousel-container">
+                    <div class="reels-carousel">
+                        <div class="reels-track">
+                            <div class="reel-slide">
+                                <div class="instagram-wrapper">
+                                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CmH3izDNF_n/" data-instgrm-version="14">
+                                        <a href="https://www.instagram.com/reel/CmH3izDNF_n/">View on Instagram</a>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="reel-slide">
+                                <div class="instagram-wrapper">
+                                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Czw3ifGOkQX/" data-instgrm-version="14">
+                                        <a href="https://www.instagram.com/reel/Czw3ifGOkQX/">View on Instagram</a>
+                                    </blockquote>
+                                </div>
+                            </div>
+                            <div class="reel-slide">
+                                <div class="instagram-wrapper">
+                                    <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DBM72ROsKU8/" data-instgrm-version="14">
+                                        <a href="https://www.instagram.com/reel/DBM72ROsKU8/">View on Instagram</a>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="reels-carousel-btn prev" aria-label="Previous reel">‹</button>
+                    <button class="reels-carousel-btn next" aria-label="Next reel">›</button>
+                </div>
+                
+                <div class="cta-section">
+                    <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener" class="link-button">Click here to see more</a>
+                </div>
+            </div>
+        </section>
+        <section class="exhibition-section container" id="places-exhibited" data-signal-group aria-labelledby="exhibition-title">
+            <div class="exhibition-intro"><h2 id="exhibition-title">Places exhibited</h2><p>Digital work shown on festival stages, public screens, and immersive installations.</p></div>
+            <div class="exhibition-console">
+                <div class="map-toolbar"><span>[ EXHIBITION ATLAS ]</span><div class="map-toolbar-actions"><span>04 LOCATIONS / WORLD VIEW</span><button class="signal-toggle" type="button" data-signal-toggle aria-pressed="false">Pause signals</button></div></div>
+                <div class="map-viewport" data-pulse-surface tabindex="0" aria-label="Exhibition map. Scroll horizontally to explore, or select a city below.">
+                    <svg class="exhibition-map" viewBox="0 0 1120 470" aria-labelledby="map-title map-description">
+                        <title id="map-title">Exhibition locations around the world</title><desc id="map-description">A monochrome world map marking Miami, Amsterdam, Wrocław, and Tokyo. Select a marker or a city below for exhibition details.</desc>
+                        <path class="map-graticule" d="M186.7 0 V470M373.3 0 V470M560.0 0 V470M746.7 0 V470M933.3 0 V470M0 405.2 H1120M0 275.5 H1120M0 145.9 H1120M0 16.2 H1120" aria-hidden="true"></path>
+                        <image href="assets/exhibition-world.svg" width="1120" height="470" aria-hidden="true"></image>
+                        <g class="map-marker is-selected" transform="translate(310.51 192.01)" role="button" tabindex="0" aria-label="Miami: Ultra Music Festival" aria-pressed="true" data-place="miami" data-map-x="310.51">
+                            <circle class="map-hit" r="22"></circle>
+                            <circle class="radial-ring" r="7" style="animation-delay: 0.0s"></circle><circle class="radial-ring radial-ring-echo" r="7" style="animation-delay: -1.4s"></circle>
+                            <circle class="map-marker-orbit" r="10"></circle><path class="map-crosshair" d="M-16 0 H-9 M9 0 H16 M0 -16 V-9 M0 9 V16"></path><circle class="map-marker-core" r="3"></circle>
+                            <path class="map-label-leader" d="M0 14 L0 34"></path><text class="map-label" x="0" y="42" text-anchor="middle">MIAMI</text>
+                        </g>
+                        <g class="map-marker" transform="translate(575.26 105.77)" role="button" tabindex="0" aria-label="Amsterdam: Digital art exhibition" aria-pressed="false" data-place="amsterdam" data-map-x="575.26">
+                            <circle class="map-hit" r="22"></circle>
+                            <circle class="radial-ring" r="7" style="animation-delay: -0.55s"></circle><circle class="radial-ring radial-ring-echo" r="7" style="animation-delay: -1.95s"></circle>
+                            <circle class="map-marker-orbit" r="10"></circle><path class="map-crosshair" d="M-16 0 H-9 M9 0 H16 M0 -16 V-9 M0 9 V16"></path><circle class="map-marker-core" r="3"></circle>
+                            <path class="map-label-leader" d="M0 -14 L-32 -43"></path><text class="map-label" x="-32" y="-35" text-anchor="end">AMSTERDAM</text>
+                        </g>
+                        <g class="map-marker" transform="translate(613.01 109.86)" role="button" tabindex="0" aria-label="Wrocław: Kinomural" aria-pressed="false" data-place="wroclaw" data-map-x="613.01">
+                            <circle class="map-hit" r="22"></circle>
+                            <circle class="radial-ring" r="7" style="animation-delay: -1.1s"></circle><circle class="radial-ring radial-ring-echo" r="7" style="animation-delay: -2.5s"></circle>
+                            <circle class="map-marker-orbit" r="10"></circle><path class="map-crosshair" d="M-16 0 H-9 M9 0 H16 M0 -16 V-9 M0 9 V16"></path><circle class="map-marker-core" r="3"></circle>
+                            <path class="map-label-leader" d="M0 14 L32 40"></path><text class="map-label" x="32" y="48" text-anchor="start">WROCŁAW</text>
+                        </g>
+                        <g class="map-marker" transform="translate(994.47 159.88)" role="button" tabindex="0" aria-label="Tokyo: Neo Shibuya TV" aria-pressed="false" data-place="tokyo" data-map-x="994.47">
+                            <circle class="map-hit" r="22"></circle>
+                            <circle class="radial-ring" r="7" style="animation-delay: -1.6500000000000001s"></circle><circle class="radial-ring radial-ring-echo" r="7" style="animation-delay: -3.05s"></circle>
+                            <circle class="map-marker-orbit" r="10"></circle><path class="map-crosshair" d="M-16 0 H-9 M9 0 H16 M0 -16 V-9 M0 9 V16"></path><circle class="map-marker-core" r="3"></circle>
+                            <path class="map-label-leader" d="M0 -14 L-25 -46"></path><text class="map-label" x="-25" y="-38" text-anchor="end">TOKYO</text>
+                        </g>
+                    </svg>
+                </div>
+                <div class="map-readout" role="status" aria-live="polite"><span id="map-selected-city">Miami, US</span><span id="map-selected-venue">Marshmello DJ set · Ultra Music Festival</span><span class="map-coordinates"><span class="map-coordinate-label">CITY COORDINATES</span><span id="map-selected-coordinates">25.76° N / 80.19° W</span></span></div>
+            </div>
+            <div class="exhibition-places" aria-label="Select an exhibition city">
+                <button class="exhibition-place is-selected" type="button" aria-pressed="true" data-place="miami" data-city="Miami, US" data-venue="Marshmello DJ set · Ultra Music Festival" data-coordinates="25.76° N / 80.19° W"><span class="venue-city">Miami <span>US</span></span><span class="venue-name">Ultra Music Festival</span></button>
+                <button class="exhibition-place" type="button" aria-pressed="false" data-place="amsterdam" data-city="Amsterdam, NL" data-venue="Exhibited digital work · Amsterdam, Netherlands" data-coordinates="52.37° N / 4.90° E"><span class="venue-city">Amsterdam <span>NL</span></span><span class="venue-name">Digital art exhibition</span></button>
+                <button class="exhibition-place" type="button" aria-pressed="false" data-place="wroclaw" data-city="Wrocław, PL" data-venue="Kinomural · Wrocław, Poland" data-coordinates="51.11° N / 17.04° E"><span class="venue-city">Wrocław <span>PL</span></span><span class="venue-name">Kinomural</span></button>
+                <button class="exhibition-place" type="button" aria-pressed="false" data-place="tokyo" data-city="Tokyo, JP" data-venue="Neo Shibuya TV · Tokyo, Japan" data-coordinates="35.68° N / 139.65° E"><span class="venue-city">Tokyo <span>JP</span></span><span class="venue-name">Neo Shibuya TV</span></button>
+            </div>
+            <p class="exhibition-worldwide">Artpoint artist · Worldwide</p>
+        </section>
+
+        <div class="container related-work">
+            <a href="content-strategy.html">Content Strategy</a>
+            <a href="exhibited-work.html">Exhibited Work <span aria-hidden="true">→</span></a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-location">Brooklyn, New York</p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/mv.nyc" target="_blank" rel="noopener">@mv.nyc</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="particles.js"></script>
+    <script src="navigation.js?v=lines-1"></script>
+    <script src="script.js"></script>
+    <script src="refresh.js?v=spatial-signals-1"></script>
+    <script src="exhibition-map.js?v=spatial-signals-1"></script>
+    <script async src="//www.instagram.com/embed.js"></script>
+</body>
+</html>
